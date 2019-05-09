@@ -3,9 +3,18 @@
 // Importamos Express
 const express = require('express'); 
 
-// Creamos nuestro servidor
+// Importamos Body-parser
+const bodyParser = require('body-parser')
+
+// Agregamso express a nuestra aplicación
 const app = express();
-const puerto = 3000;
-app.listen( puerto , () => {
-    console.log('API REST de TRIBARGO corriendo en http://localhost:3000')    
+// El puerto puede ser una variable de entorno o el 3000
+const port = process.env.PORT || 3000;    
+
+app.use(bodyParser.urlencoded({ extended : false })) 
+app.use(bodyParser.json)    // En las peticiones, el cuerpo del mensaje puede ser en formato JSON
+
+// Creamos nuestro servidor
+app.listen( port , () => {
+    console.log(`API REST de TRIBARGO corriendo en http://localhost:${port}`)    
 })
