@@ -1,0 +1,22 @@
+{
+  "name": "tribargo",
+  "version": "1.0.0",
+  "description": "Aplicacion diseñada, desarrollada e implementada con JavaScript, NodeJS, MongoDB y distintas tecnologías cuyo fin es proporcionar la recomendacion de bares en la Calle Mader, CDMX.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ralph2g/Tribargo.git"
+  },
+  "author": "Jesus Kaimorts Diaz Medina, Rafael Garcia Garcia, Luisa Anahi Hernandez Estrada, Erick Alejandro Gutierrez Huerta",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Ralph2g/Tribargo/issues"
+  },
+  "homepage": "https://github.com/Ralph2g/Tribargo#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
