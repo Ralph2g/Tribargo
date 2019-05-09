@@ -6,27 +6,107 @@ const bodyParser = require('body-parser');   // Importamos Body-parser
 const app = express();                  // Agregamso express a nuestra aplicación
 const port = process.env.PORT || 3001;  // El puerto puede ser una variable de entorno o el 3000
 
+/* |============= Codigos de respuesta de HTTP =============| */
+const info_answer_codes = { 'Continue' : 100,
+                            'SwitchingProtocols' : 101,
+                            'Processing' : 102,
+                            'Checkpoint' : 103
+                         };
+const accept_codes = {  'OK': 200,
+                        'Created' : 201,
+                        'Accepted': 202,
+                        'NAI' : 203, //Non-Authoritative Information (desde HTTP/1.1)
+                        'NoContent' : 204,
+                        'ResetContent' : 205,
+                        'PartialContent' : 206,
+                        'MultiStatus' : 207,
+                        'AlreadyReported' : 208
+                    };
+const redirection_codes = { 'MultipleChoices': 300,
+                            'MovedPermanently' : 301,
+                            'Found': 302,
+                            'SeeOther' : 303,
+                            'NotModified' : 304,
+                            'UseProxy' : 305,
+                            'SwitchProxy' : 306,
+                            'TemporaryRedirect' : 307,
+                            'PermanentRedirect' : 308
+                         };
+const client_error_codes = {    'BadRequest' : 400,
+                                'Unauthorized' : 401,
+                                'PaymentRequired' : 402,
+                                'Forbidden' : 403,
+                                'NotFound' : 404,
+                                'MNA' : 405,    // Method Not Allowed
+                                'NotAcceptable' : 406,
+                                'PAR' : 407,    // Proxy Authenitcation Required
+                                'RequestTimeout' : 408,
+                                'Conflict' : 409,
+                                'Gone' : 410,
+                                'LengthRequired' : 411,
+                                'PreconditionFailed' : 412,
+                                'RETL' : 413,   // Request Entity Too Large
+                                'RUTL' : 414,   // Rquest URI Too Long
+                                'UMT'  : 415,   // Unsupported Media Type
+                                'RRNS' : 416,   // Request Range Not Satisfiable
+                                'ExpectationFailed' : 417,
+                                'UnprocessableEntity' : 422,
+                                'Locked' : 423,
+                                'FaildDependency' : 424,
+                                'Unassigned' : 425,
+                                'UpgradeRequired' : 426,
+                                'PreconditionRequired' : 428,
+                                'TMR' : 429,    // Too Many Request
+                                'RHFTL' : 431,  // Request Header Fields Too Large
+                                '449' : 449,
+                                'UFLR' : 451   // Unavailable for Legal Reasons
+                          };
+const server_error_codes = {    'ISE': 500, // Internal Server Error
+                                'NotImplemented' : 501,
+                                'BadGateway' : 502,
+                                'ServiceUnavailable' : 503,
+                                'GatewayTimeout' : 504,
+                                'HTTP_VNS' : 505,   // HTTP Version Not Supported
+                                'VAN' : 506,    // Variant Also Negotiates
+                                'InsufficientStorage' : 507,
+                                'LoopDetected' : 508,
+                                'BLE' : 509,    // Bandwidth Limit Exceeded
+                                'NotExtended' : 510,
+                                'NAR' : 511,    // Network Authentication Required
+                                'NotUpdated' : 512,
+                                'VersionMismatch' : 521
+                          };
+
 /* ========= Importamos los middleware ========= */
 app.use(bodyParser.urlencoded({ extended : false }));
 app.use(bodyParser.json());   // En las peticiones, el cuerpo del mensaje puede ser en formato JSON
 
-/* ========= Añadiendo las peticiones a la API REST */
-//fun_res(app);     // Funcion usando response
-fun_req(app);       // FUncion usando request
+let url_drink = '/api/drink';       // Este es un endpoint
+
+// Metodo tipo get.
+app.get(url_drink, (req, res) => {
+    res.send( accept_codes['OK'] , {drinks: []});
+});
+
+app.post(url_drink, (req, res) => {
+    console.log(req.body); // Es todo lo que se manda en el cuerpo de la peticion
+    res.status( client_error_codes['OK']).send( {message : "La bebida se ha agregado"});
+}); 
+
+let url_only_recurse = url_drink + '/:drinkID';
+app.get(url_only_recurse, (req, res) => {
+
+});
+
+app.put(url_only_recurse, (req, res) => {
+
+});
+ 
+app.delete(url_only_recurse, (req, res) => {
+
+});
 
 // Creamos nuestro servidor
 app.listen( port , () => {
     console.log(`API REST de TRIBARGO corriendo en http://localhost:${port}`);
 });
-
-function fun_res( app ){
-    app.get( '/hola', (req, res) => {
-        res.send({ message: 'Hola Mundo' });
-    });
-}
-
-function fun_req( app ){
-    app.get( '/hola/:name', (req, res) => {
-        res.send({ message: `Hola ${req.params.name}` });
-    });
-}
