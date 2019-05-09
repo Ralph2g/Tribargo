@@ -15,6 +15,9 @@
 >             "start": "nodemon index.js",
 >             "test": "echo \"Error: no test specified\" && exit 1"
 >            }
+>       Para poder ejecutarlo, basta con hacer lo siguiente.
+>
+>           $ npm start
 >
 >
 >
