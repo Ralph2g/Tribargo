@@ -42,3 +42,5 @@ const BarSchema = Schema({
         }
     }
 });
+
+module.exports = mongoose.model('Bar', BarSchema);
