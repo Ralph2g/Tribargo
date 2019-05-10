@@ -92,14 +92,40 @@ const server_error_codes = {
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json()); // En las peticiones, el cuerpo del mensaje puede ser en formato JSON
 
-// Metodo tipo get.
-app.get('/api/drink', (req, res) => {
-    res.status(accept_codes['OK']).send({ drinks: [] });
+/*
+@name: 
+    name: funcion get
+@param:
+    url: URL de la coleccion bebida
+    (req,res): req: request  (peticion)
+               res: response (respuesta)
+@brief:  
+    Se utiliza la URL con el fin de obtener 
+    todos los elementos de la coleccion bebida
+*/
+app.get('/api/bebida', (req, res) => {
+    console.log(req.body);
+    Bebida.find({}, (err, bebidas) => {
+        if (err) return res.status(server_error_codes['ISE']).send({ message: `Error al realizar la petición:${err}` });
+        if (!bebidas) return res.status(client_error_codes['NotFound']).send({ message: `No existen los productos` })
+        res.status(accept_codes['OK']).send({ bebidas });
+    });
 });
 
-app.post('/api/drink', (req, res) => {
+/*
+@name: 
+    name: funcion post
+@param:
+    url: URL de la BD
+    (req,res): req: request  (peticion)
+               res: response (respuesta)
+@brief:  
+    Se utiliza la funcion para agregar bebidas
+    a la coleccion bebida en la base de datos.
+*/
+app.post('/api/bebida', (req, res) => {
 
-    console.log("POST /api/drink");
+    console.log("POST /api/bebida");
     console.log(req.body);
 
     /* Asignamos lo atributos de la bebida */
@@ -121,16 +147,74 @@ app.post('/api/drink', (req, res) => {
 
 });
 
-app.get('/api/drink/:drinkID', (req, res) => {
+/*
+@name: 
+    name: funcion get
+@param:
+    url: URL de la BD utilizando el ID del producto
+    (req,res): req: request  (peticion)
+               res: response (respuesta)
+@brief:  
+    Se utiliza el id único generado por mongodb
+    con el fin de obtener informacion del tipo de bebida
+*/
+app.get('/api/bebida/:bebidaID', (req, res) => {
+    let bebidaID = req.params.bebidaID; // Obtenemos la ID de la bebida
 
+    Bebida.findById(bebidaID, (err, bebida) => {
+        if (err) return res.status(server_error_codes['ISE']).send({ message: `Error al realizar la petición:${err}` });
+        if (!bebida) return res.status(client_error_codes['NotFound']).send({ message: `El producto no existe` })
+
+        // res.status(accept_codes['OK']).send({ bebida: bebida }) es lo mismo que lo de abajo
+        res.status(accept_codes['OK']).send({ bebida })
+    });
 });
 
-app.put('/api/drink/:drinkID', (req, res) => {
+/*
+@name: 
+    name: funcion update
+@param:
+    url: URL de la BD utilizando el ID del producto
+    (req,res): req: request  (peticion)
+               res: response (respuesta)
+@brief:  
+    Se utiliza el id único generado por mongodb
+    con el fin de actualizar una bebida de la base de datos
+*/
+app.put('/api/bebida/:bebidaID', (req, res) => {
+    let bebidaID = req.params.bebidaID;
+    let info_update = req.body; // Objeto con campos a actualizar
 
+    /* @param: bebidaID
+       @param: info_update */
+    Bebida.findByIdAndUpdate(bebidaID, info_update, { new: true }, (err, bebidaUpdated) => {
+        if (err) res.status(server_error_codes['ISE']).send({ message: `Error al actualizar el producto: ${err}` });
+        res.status(accept_codes['OK']).send({ bebida: bebidaUpdated });
+    });
 });
 
-app.delete('/api/drink/:drinkID', (req, res) => {
+/*
+@name: 
+    name: funcion delete
+@param:
+    url: URL de la BD utilizando el ID del producto
+    (req,res): req: request  (peticion)
+               res: response (respuesta)
+@brief:  
+    Se utiliza el id único generado por mongodb
+    con el fin de eliminar una bebida de la base de datos
+*/
+app.delete('/api/bebida/:bebidaID', (req, res) => {
+    let bebidaID = req.params.bebidaID;
 
+    Bebida.findById(bebidaID, (err, bebida) => {
+        if (err) res.status(server_error_codes['ISE']).send({ message: `Error al borrar el producto: ${err}` });
+
+        bebida.remove(err => {
+            if (err) res.status(server_error_codes['ISE']).send({ message: `Error al borrar el producto: ${err}` });
+            res.status(accept_codes['OK']).send({ message: 'El producto ha sido eliminado' });
+        });
+    });
 });
 
 // Conectamos la base de datos.
