@@ -30,3 +30,5 @@ table | collection
 row | document
 column | field
 primary key | primary key
+>      Para un mejor entendimiento de **MongoDB**, se recomienda visitar el siguiente [**enlace**](https://medium.com/techwomenc/como-pasar-de-sql-a-nosql-sin-sufrir-e34dd22349e5)
+
