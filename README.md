@@ -18,7 +18,19 @@
 >       Para poder ejecutarlo, basta con hacer lo siguiente.
 >
 >           $ npm start
+>   * **Bcrypt**: Permite **hashear/cifrar** contraseñas, ya que no se puede almacenar directamente las contraseñas por seguridad ya que *cualquier persona que pueda entrar a la base de datos* podría acceder a esta contraseña y **comprometeria la información del usuario**.
+>       Esto nos permite guardarla en un formato codificado de tal manera que **nuestra aplicación sea la única que pueda descodificar**.
 >
+>   * **JSON Web Token**: Con el fin de hacer la aplicación **escalable**, es decir que se separe la parte del front-end y back-end, la **API REST** de nuestra aplicación **Cliente**, lo mejor es **autenticación basada en Tokens**.
+>       El usuario envia un código al servidor y el servidor se encarga de **traducir, descifrar el código y decir qué usuario es.** Una vez que se percata que usuario es, *sabe si está registrado y ver que privilegios tiene.*
+>       * Ventajas:
+>           * No se guardan sesiones.
+>           * El servidor es mucho más ligero.
+>           * La lógica recae en el lado del cliente.
+>           * Un manipulación más sencilla.
+>           * Verifica si el usuario está registrado y ver que accesos tiene.
+>      
+>      Para entener un poco mejor estos JSON Web Tokens, se recomienda visitar el [este enlace](https://jwt.io/#debugger-io).
 > * **MongoDB**:  Es una base de datos NoSQL (*No Strcuture Query Languages*) el cual es **orientado a documentos** y que es *opensource*. Nos permite indexar registros de texto completo que se encuentra estrucutrado en un *documento*. 
 >
 >      En MongoDB un **documento es un registro compuesto por pares “campo : valor”**. Estos documentos son muy parecidos a los objetos ***JSON***. 
@@ -30,5 +42,6 @@ table | collection
 row | document
 column | field
 primary key | primary key
->      Para un mejor entendimiento de **MongoDB**, se recomienda visitar el siguiente [**enlace**](https://medium.com/techwomenc/como-pasar-de-sql-a-nosql-sin-sufrir-e34dd22349e5)
+
+Para un mejor entendimiento de **MongoDB**, se recomienda visitar el [este enlace.](https://medium.com/techwomenc/como-pasar-de-sql-a-nosql-sin-sufrir-e34dd22349e5)
 
