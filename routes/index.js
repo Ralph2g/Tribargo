@@ -2,9 +2,9 @@
 
 const express = require('express');
 const BebidaCtrl = require('../controllers/bebida');
-
 const api = express.Router();
 
+/* |=========== CRUD en la coleccion BEBIDA ===========| */
 api.get('/bebida', BebidaCtrl.getBebidas);
 api.post('/bebida', BebidaCtrl.saveBebida);
 api.get('/bebida/:bebidaID', BebidaCtrl.getBebida);
