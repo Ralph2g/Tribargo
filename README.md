@@ -22,11 +22,11 @@
 > * **MongoDB**:  Es una base de datos NoSQL (*No Strcuture Query Languages*) el cual es **orientado a documentos** y que es *opensource*. Nos permite indexar registros de texto completo que se encuentra estrucutrado en un *documento*. 
 >
 >      En MongoDB un **documento es un registro compuesto por pares “campo : valor”**. Estos documentos son muy parecidos a los objetos ***JSON***. 
->
->       SQL| NoSQL with MongoDB
->       -- | --
->       database | database
->       table | collection
->       row | document
->       column | field
->       primary key | primary key
+
+SQL     | NoSQL with MongoDB
+------- | ------------------
+database | database
+table | collection
+row | document
+column | field
+primary key | primary key
