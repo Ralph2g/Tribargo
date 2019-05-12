@@ -23,6 +23,7 @@
     "crypto": "^1.0.1",
     "express": "^4.16.4",
     "jwt-simple": "^0.5.6",
+    "moment": "^2.24.0",
     "mongoose": "^5.5.7"
   },
   "devDependencies": {
