@@ -18,7 +18,7 @@
 >       Para poder ejecutarlo, basta con hacer lo siguiente.
 >
 >           $ npm start
->   * **Bcrypt**: Permite **hashear/cifrar** contraseñas, ya que no se puede almacenar directamente las contraseñas por seguridad ya que *cualquier persona que pueda entrar a la base de datos* podría acceder a esta contraseña y **comprometeria la información del usuario**.
+>   * **Bcrypt y Crypt**: Permite **hashear/cifrar** contraseñas, ya que no se puede almacenar directamente las contraseñas por seguridad ya que *cualquier persona que pueda entrar a la base de datos* podría acceder a esta contraseña y **comprometeria la información del usuario**.
 >       Esto nos permite guardarla en un formato codificado de tal manera que **nuestra aplicación sea la única que pueda descodificar**.
 >
 >   * **JSON Web Token**: Con el fin de hacer la aplicación **escalable**, es decir que se separe la parte del front-end y back-end, la **API REST** de nuestra aplicación **Cliente**, lo mejor es **autenticación basada en Tokens**.
