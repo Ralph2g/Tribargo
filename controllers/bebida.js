@@ -1,15 +1,25 @@
 'use strict'
 
+/**
+ * @author:      Diaz Medina Jesus Kaimorts 
+ * @version:     1.0
+ * @description: En este script se encuentran las funciones
+ *               necesarias para poder acceder a la base de datos
+ *               creada con MongoDB.
+ *               Se utilizan metodos de HTTP para poder realizar
+ *               las consultas necesarias y dar un CRUD a la aplicacion 
+ **/
+
 const Bebida = require('../models/bebida')
 const ReponseHTTP = require('./codes_http')
 
-/*
-@name:      getBebidas
-@params:    req - request  (peticion)
-            res - response (respuesta)
-@brief:     Obtiene todos los elementos de la coleccion
-            bebida de la base de datos
-*/
+/**
+ * @name:           getBebidas
+ * @param:          req:    Objeto HTTP request.
+ * @param:          res:    Objeto HTTP response.
+ * @description:    Obtiene todos los elementos de la coleccion
+ *                  bebida de la base de datos
+ **/
 function getBebidas(req, res) {
     console.log(req.body);
     Bebida.find({}, (err, bebidas) => {
@@ -19,13 +29,13 @@ function getBebidas(req, res) {
     });
 }
 
-/*
-@name:      getBebida
-@params:    req - request  (peticion)
-            res - response (respuesta)
-@brief:     Obtiene un elemento de la coleccion
-            bebida de la base de datos.
-*/
+/**
+ * @name:           getBebida
+ * @param:          req:    Objeto HTTP request.
+ * @param:          res:    Objeto HTTP response.
+ * @description:    Obtiene un elemento de la coleccion
+ *                  bebida de la base de datos.
+ **/
 function getBebida(req, res) {
     let bebidaID = req.params.bebidaID; // Obtenemos la ID de la bebida
 
@@ -38,13 +48,13 @@ function getBebida(req, res) {
     });
 }
 
-/*
-@name:      saveBebida
-@params:    req - request  (peticion)
-            res - response (respuesta)
-@brief:     Guarda una bebida en la coleccion
-            bebida de la base de datos
-*/
+/**
+ * @name:           saveBebida
+ * @param:          req:    Objeto HTTP request.
+ * @param:          res:    Objeto HTTP response.
+ * @description:    Guarda una bebida en la coleccion
+ *                  bebida de la base de datos
+ **/
 function saveBebida(req, res) {
     console.log("POST /api/bebida");
     console.log(req.body);
@@ -66,13 +76,13 @@ function saveBebida(req, res) {
     });
 }
 
-/*
-@name:      updateBebida
-@params:    req - request  (peticion)
-            res - response (respuesta)
-@brief:     Actualiza una bebida en la coleccion
-            bebida de la base de datos
-*/
+/**
+ * @name:           updateBebida
+ * @param:          req:    Objeto HTTP request.
+ * @param:          res:    Objeto HTTP response.
+ * @description:    Actualiza una bebida en la coleccion
+ *                  bebida de la base de datos
+ **/
 function updateBebida(req, res) {
     let bebidaID = req.params.bebidaID;
     let info_update = req.body; // Objeto con campos a actualizar
@@ -85,13 +95,13 @@ function updateBebida(req, res) {
     });
 }
 
-/*
-@name:      deleteBebida
-@params:    req - request  (peticion)
-            res - response (respuesta)
-@brief:     Elimina una bebida de la coleccion
-            bebida de la base de datos
-*/
+/**
+ * @name:           deleteBebida
+ * @param:          req:    Objeto HTTP request.
+ * @param:          res:    Objeto HTTP response.
+ * @description:    Elimina una bebida de la coleccion
+ *                  bebida de la base de datos
+ **/
 function deleteBebida(req, res) {
     let bebidaID = req.params.bebidaID;
 
