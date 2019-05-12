@@ -1,12 +1,24 @@
 'use strict'
 
-/* |============= Codigos de respuesta de HTTP =============| */
+/**
+ * @author:      Diaz Medina Jesus Kaimorts
+ * @version:     1.0
+ * @description: En este script se encuentran los códigos de respuesta
+ *               que HTTP proporciona, tales como lo son: de informacion,
+ *               aceptacion, redireccionamiento error de cliente y error
+ *               de servidor.
+ *               Cada uno de ellos utiliza un diccionario para que se puedan
+ *               establecer una clave-valor y hacer referencia a ellos a 
+ *               partir del nombre de respuesta asociado.              
+ **/
+
 const info_answer_codes = {
     'Continue': 100,
     'SwitchingProtocols': 101,
     'Processing': 102,
     'Checkpoint': 103
 };
+
 const accept_codes = {
     'OK': 200,
     'Created': 201,
@@ -18,6 +30,7 @@ const accept_codes = {
     'MultiStatus': 207,
     'AlreadyReported': 208
 };
+
 const redirection_codes = {
     'MultipleChoices': 300,
     'MovedPermanently': 301,
@@ -29,11 +42,12 @@ const redirection_codes = {
     'TemporaryRedirect': 307,
     'PermanentRedirect': 308
 };
+
 const client_error_codes = {
     'BadRequest': 400,
     'Unauthorized': 401,
     'PaymentRequired': 402,
-    'Forbidden': 403,
+    'Forbidden': 403, // Access prohibited.
     'NotFound': 404,
     'MNA': 405, // Method Not Allowed
     'NotAcceptable': 406,
@@ -59,6 +73,7 @@ const client_error_codes = {
     '449': 449,
     'UFLR': 451 // Unavailable for Legal Reasons
 };
+
 const server_error_codes = {
     'ISE': 500, // Internal Server Error
     'NotImplemented': 501,
