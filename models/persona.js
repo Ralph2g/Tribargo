@@ -1,5 +1,16 @@
 'use strict'
 
+/**
+ * @author:      Diaz Medina Jesus Kaimorts
+ * @version:     1.0
+ * @description: En este script se encuentra el modelo Persona, el cual será
+ *               utilizando para poder crear la coleccion Persona en la base
+ *               de datos de MongoDB.
+ *               Se utiliza un diccionario para facilitar la lectura de las
+ *               distintas consultas que se le harán utilizando el script Persona
+ *               dentro del @package controllers
+ **/
+
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const crypto = require('crypto');
@@ -34,24 +45,26 @@ const PersonaSchema = Schema({
     fecha_nacimiento: Date,
     presupuesto: Number,
     buddies: {
-        there_budy: Boolean,
-        num_budies: Number
+        there_budy: false,
+        num_budies: 0
     }
 });
 
-/* |=========== IMPORTANTE ===========|
-@desc:  Se utilizaran funciones que se puedan ejecutar 
-        antes o despues de que el modelo haya sido 
-        almacenado en la base de datos
-*/
+/** ================ IMPORTANTE ================
+ * @description:    Se utilizaran funciones que se puedan ejecutar 
+ *                  antes o despues de que el modelo haya sido 
+ *                  almacenado en la base de datos
+ *==============================================*
+ **/
 
-/*
-@name:      cyphering
-@params:    email -
-            contrasenha -
-@brief:     Antes de que se guarde, se ejecuta la funcion
-            para que pueda pasar del middleware, con el fin
-            de crear una hash que para cifrar la contrasenha.*/
+/**
+ * @name:           cyphering
+ * @param:          correo
+ * @param:          contrasenha
+ * @description:    Antes de que se guarde, se ejecuta la funcion
+ *                  para que pueda pasar del middleware, con el fin 
+ *                  de crear una hash que para cifrar la contrasenha
+ */
 PersonaSchema.pre('save', (next) => {
     let usuario = this;
     if (!usuario.isModified('contrasenha')) return next();
@@ -66,6 +79,12 @@ PersonaSchema.pre('save', (next) => {
     });
 });
 
+/**
+ * @name:           createAvatar
+ * @param:          correo
+ * @description:    Antes de que se guarde, se crea un gravatar
+ *                  al usuario utilizando el cifrado de MD5.
+ **/
 PersonaSchema.methods.gravatar = function() {
     if (!this.correo) { // Si no tiene un correo registrado en el gavatar, se crea uno por defecto
         return `https://gravatar.com/avatar/?s=200&d=retro`;
