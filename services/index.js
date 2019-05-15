@@ -1,13 +1,16 @@
 'use strict'
 
 /**
- * @author:      Diaz Medina Jesus Kaimorts 
- * @version:     1.0
- * @description: Este script tiene como objetivo establecer servicios
- *               que ayuden a distintos modelos y controladores de nuestra
- *               API REST para el comportamiento de la aplicacion TRIBARGO.
- *               Este script también tiene como fin la creacion de tokens
- *               para la validacion de usuarios y la decondificacion de éstos.
+ * @author:         Diaz Medina Jesus Kaimorts 
+ * @version:        1.0
+ * @description:    Este script tiene como objetivo establecer servicios
+ *                  que ayuden a distintos modelos y controladores de nuestra
+ *                  API REST para el comportamiento de la aplicacion TRIBARGO.
+ *                  Este script también tiene como fin la creacion de tokens
+ *                  para la validacion de usuarios y la decondificacion de éstos.
+ * @summary:        IMPORTANTE: No se debe de tomar en cuenta esta clase. 
+ *                  Ya que hay conflictos a la hora de crear las cuentas 
+ *                  de los usuarios.
  **/
 
 const jwt = require('jwt-simple');
