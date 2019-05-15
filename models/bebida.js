@@ -15,7 +15,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 //  Esta es una coleccion - equivalente a una tabla
-const BebidaSchema = Schema({
+const BebidaSchema = new Schema({
     nombre: String,
     marca: String,
     categoria: {
