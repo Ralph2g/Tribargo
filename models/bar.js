@@ -14,7 +14,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const BarSchema = Schema({
+const BarSchema = new Schema({
     nombre: String,
     correo: String,
     contrasenha: String,
