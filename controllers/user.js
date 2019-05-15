@@ -6,6 +6,9 @@
  * @description: Este script tiene como objetivo encargarse de la 
  *               autenticación del registro e inicio de sesion por
  *               cada uno de los usuarios en nuestra API REST de TRIBARGO
+ * @summary      Esta clase necesita ser cambiada, ya que a la hora de realizar
+ *               el inicio de sesión y registro no hace nada y no crea la cuenta
+ *               del usuario que se ha intentado registrar
  **/
 
 const ResponseHTTP = require('./codes_http');
@@ -20,20 +23,23 @@ const service = require('../services/index');
  *                  y servicios (funciones) que nos ayuden a repetir 
  *                  determinadas acciones.
  **/
-function signUp(req, res) {
+const signUp = (req, res) => {
     const usuario = new Persona({
         nombre: req.body.nombre,
         apellido: req.body.apellido,
         correo: req.body.correo,
+        contrasenha: req.body.contrasenha,
         edad: req.body.edad,
         sexo: req.body.sexo,
         fecha_nacimiento: req.body.fecha_nacimiento,
-        presupuesto: req.body.presupuesto,
+        presupuesto: req.body.presupuesto
     });
+
+    usuario.avatar = usuario.gravatar();
 
     usuario.save((err) => {
         if (err) res.status(ResponseHTTP.server_error_codes['ISE']).send({ message: `Error al crear al usuario: ${err}` });
-        return res.status(ResponseHTTP.accept_codes['OK']).send({ token: service.createToken(usuario) });
+        return res.status(ResponseHTTP.accept_codes['Created']).send({ token: service.createToken(usuario) });
     });
 }
 
@@ -47,17 +53,24 @@ function signUp(req, res) {
  *                  Si el usuario existe, se dará acceso creando un token 
  *                  el cual viajará en la cabecera.                  
  **/
-function signIn(req, res) {
-    Persona.find({ correo: req.body.correo }, (err, usuario) => {
-        if (err) return res.status(ResponseHTTP.server_error_codes['ISE']).send({ message: `Hubo en error: ${err}` });
-        if (!usuario) return res.status(ResponseHTTP.client_error_codes['NotFound']).send({ message: `El usuario no existe` });
+const signIn = (req, res) => {
 
-        req.usuario = usuario; // El usuario si existe.
-        return res.status(ResponseHTTP.accept_codes['OK']).send({
-            message: `Te has logueado correctamente`,
+    Persona.findOne({ correo: req.body.correo }, (err, usuario) => {
+        if (err) return res.status(ResponseHTTP.server_error_codes['ISE']).send({ msg: `Error al ingresar en la aplicación: ${err}` });
+        if (!usuario) return res.status(ResponseHTTP.client_error_codes['NotFound']).send({ msg: `No existe el usuario: ${req.body.correo}` });
+    });
+
+    return usuario.comparePassword(req.body.contrasenha, (err, isMatch) => {
+        if (err) return res.status(ResponseHTTP.server_error_codes['ISE']).send({ msg: `Error al ingresar: ${err}` });
+        if (!isMatch) return res.status(ResponseHTTP.client_error_codes['NotFound']).send({ msg: `Error de contraseña: ${req.body.correo}` });
+
+        req.usuario = usuario;
+
+        return res.status(ResponseHTTP.server_error_codes['ISE']).send({
+            msg: 'Has ingresado de manera exitosa',
             token: service.createToken(usuario)
         });
-    });
+    }).select('_id email +password');
 }
 
 module.exports = {
