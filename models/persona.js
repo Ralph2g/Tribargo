@@ -1,14 +1,17 @@
 'use strict'
 
 /**
- * @author:      Diaz Medina Jesus Kaimorts
- * @version:     1.0
- * @description: En este script se encuentra el modelo Persona, el cual será
- *               utilizando para poder crear la coleccion Persona en la base
- *               de datos de MongoDB.
- *               Se utiliza un diccionario para facilitar la lectura de las
- *               distintas consultas que se le harán utilizando el script Persona
- *               dentro del @package controllers
+ * @author:         Diaz Medina Jesus Kaimorts
+ * @version:        1.0
+ * @description:    En este script se encuentra el modelo Persona, el cual será
+ *                  utilizando para poder crear la coleccion Persona en la base
+ *                  de datos de MongoDB.
+ *                  Se utiliza un diccionario para facilitar la lectura de las
+ *                  distintas consultas que se le harán utilizando el script Persona
+ *                  dentro del @package controllers
+ * @summary         Los métodos que se han implementado aqui, no funcionan. Ya que a 
+ *                  la hora de querer realizar el registro de un usuario no es posible.
+ * 
  **/
 
 const mongoose = require('mongoose');
@@ -16,7 +19,7 @@ const Schema = mongoose.Schema;
 const crypto = require('crypto');
 const bcrypt = require('bcrypt-nodejs');
 
-const PersonaSchema = Schema({
+const PersonaSchema = new Schema({
     nombre: String,
     apellido: String,
     correo: { // Vamos a estandarizar el correo
@@ -42,7 +45,7 @@ const PersonaSchema = Schema({
         type: String,
         enum: ['F', 'M']
     },
-    fecha_nacimiento: Date,
+    fecha_nacimiento: String,
     presupuesto: Number,
     buddies: {
         there_budy: false,
@@ -65,7 +68,7 @@ const PersonaSchema = Schema({
  *                  para que pueda pasar del middleware, con el fin 
  *                  de crear una hash que para cifrar la contrasenha
  */
-PersonaSchema.pre('save', (next) => {
+PersonaSchema.pre('save', function(next) {
     let usuario = this;
     if (!usuario.isModified('contrasenha')) return next();
 
@@ -80,18 +83,34 @@ PersonaSchema.pre('save', (next) => {
 });
 
 /**
+ * @name:           comparePassword
+ * @param:          contrasenhaCandidata
+ * @oaram:          cb
+ * @description:    Se encarga de comparar las contraseñas para poder dar
+ *                  acceso al sistema de la API REST de TRIBAGO.
+ */
+PersonaSchema.methods.comparePassword = function(contrasenhaCandidata, cb) {
+    bcrypt.compare(contrasenhaCandidata, this.contrasenha, (err, isMatch) => {
+        cb(err, isMatch);
+    })
+}
+
+/**
  * @name:           createAvatar
  * @param:          correo
  * @description:    Antes de que se guarde, se crea un gravatar
  *                  al usuario utilizando el cifrado de MD5.
  **/
-PersonaSchema.methods.gravatar = function() {
+PersonaSchema.methods.gravatar = function(size) {
+    if (!size) {
+        size = 200;
+    }
     if (!this.correo) { // Si no tiene un correo registrado en el gavatar, se crea uno por defecto
-        return `https://gravatar.com/avatar/?s=200&d=retro`;
+        return `https://gravatar.com/avatar/?s=${size}&d=retro`;
     }
     // gravatar crea por default un hash md5
     const md5 = crypto.createHash('md5').update(this.correo).digest('hex');
-    return `https://gravatar.com/avatar/${md5}?s=200&d=retro`;
+    return `https://gravatar.com/avatar/${md5}?s=${size}&d=retro`;
 }
 
 module.exports = mongoose.model('Persona', PersonaSchema);
