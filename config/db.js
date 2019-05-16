@@ -5,7 +5,7 @@
  * @author:         Diaz Medina Jesus Kaimorts
  * @version:        1.0
  * @description:    Este es el archivo de configuracion de la base de datos utilizada
- *                  utilizada para poder realizar la conexión de la base de datos.
+ *                  para poder realizar la conexión de la base de datos.
  **/
 
 const mongoose = require('mongoose');
