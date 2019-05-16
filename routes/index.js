@@ -35,7 +35,8 @@ api.delete('/bebida/:bebidaID', BebidaCtrl.deleteBebida);
  * @description:    Las funciones que a continación se muestran, permiten
  *                  el registro e inicio de sesión del usuario utilizando
  *                  el esquema previamente diseñado en el @package 
- *                  /models/persona.js 
+ *                  /models/persona.js, de manera segura, cifrando la 
+ *                  contraseña de cada usuario
  **/
 api.post('/register', Users.createUser);
 api.post('/login', Users.loginUser);
