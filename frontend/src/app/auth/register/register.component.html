@@ -1,0 +1,24 @@
+<div class="container">
+    <div class="login">
+        <div class="login-triangle"></div>
+
+        <h2 class="login-header">Create an account</h2>
+
+        <form #frmRegister="ngForm" class="login-container" (ngSubmit)="onRegister(frmRegister)">
+            <p><input type="text" name="nombre" placeholder="Nombre" ngModel required></p>
+            <p><input type="text" name="apellido" placeholder="Apellido" ngModel required></p>
+            <p><input type="number" name="edad" placeholder="Edad" ngModel required></p>
+            <p>
+                <select name="sexo" ngModel required>
+                  <option value="Masculino">Masculino</option>
+                  <option value="Femenino">Femenino</option>
+                </select>
+            </p>
+            <p><input type="date" name="fecha_nacimiento" placeholder="Fecha de nacimiento" ngModel required></p>
+            <p><input type="number" name="presupuesto" placeholder="$ - Presupuesto" ngModel required></p>
+            <p><input type="email" name="correo" placeholder="Correo" ngModel required></p>
+            <p><input type="password" name="contrasenha" placeholder="Password" ngModel required></p>
+            <p><input type="submit" value="Register"></p>
+        </form>
+    </div>
+</div>
