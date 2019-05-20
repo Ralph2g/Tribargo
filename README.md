@@ -46,3 +46,5 @@ primary key | primary key
 Para un mejor entendimiento de **MongoDB**, se recomienda visitar el [este enlace.](https://medium.com/techwomenc/como-pasar-de-sql-a-nosql-sin-sufrir-e34dd22349e5)
 
 >   * **Cors**: Si nosotros queremos hacer un 'merge' entre el **back-end** y el **front-end**, puede haber **problemas con respecto a los puertos usados**. Gracias a este paquete eviatmos ese tipo de colisiones.
+
+**ESTA ES UNA PRUEBA DE ALEX**
