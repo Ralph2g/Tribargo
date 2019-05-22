@@ -1,9 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-const routes: Routes = [
+//Modulos PErsonalizador
+import { InicioComponent } from './inicio/inicio.component';
 
-    
+const routes: Routes = [
+    { 
+        path:'home', component: InicioComponent},
 ];
 
 @NgModule({
