@@ -4,20 +4,19 @@ import { AuthService } from '../../services/auth.service';
 import { UserI } from '../../models/user';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
+  selector: 'bar-register',
+  templateUrl: './bar_register.component.html',
 })
-export class LoginComponent implements OnInit {
-
+export class BarRegisterComponent implements OnInit {
+  
   constructor(private authService: AuthService, private router: Router) { }
 
   ngOnInit() {
   }
 
-  onLogin(form):void{
-    this.authService.login(form.value).subscribe(res => {
+  onRegister(form):void{
+    this.authService.register(form.value).subscribe( res =>{
       this.router.navigateByUrl('/auth');
-    })
+    });
   }
-
 }

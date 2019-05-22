@@ -1,0 +1,40 @@
+<body class="bg-gra-02">
+    <div class="page-wrapper  p-t-130 p-b-100 font-poppins">
+        <div class="wrapper wrapper--w680">
+            <div class="card card-4">
+                <div class="card-body">
+                  <img src="assets/styleSecond/img/beer.png" width="25%" height="25%">
+                    <div class="ttl">Iniciar sesi&oacute;n</div>
+                    <div class="descrp">de bar</div>
+                    <br>
+                      <br>
+                    <form method="POST">
+
+                            <div class="col-1">
+                                <div class="input-group">
+                                    <label class="label">Correo</label>
+                                    <input class="input--style-4" type="email" name="correo" Required>
+                                </div>
+                            </div>
+
+                        <div class="col-1">
+                            <div class="input-group">
+                                <label class="label">Contrase&ntilde;a</label>
+                                <input class="input--style-4" type="password" name="pass" Required>
+                            </div>
+                        </div>
+
+                        <div class="p-t-15">
+                            <button class="btn btn-1" type="submit" style="letter-spacing: 3pt;">Enviar</button>
+                        </div>
+                    </form>
+                        <br>
+
+                        <p>¿No tienes cuenta?&nbsp;<a [routerLink]="['/auth/user-register']"><b>Registrarse</b></a></p>
+                        <p>¿Quieres iniciar sesi&oacute;n como bar?&nbsp;<a [routerLink]="['/auth/bar-login']"><b>Clic aquí</b></a></p>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

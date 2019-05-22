@@ -4,10 +4,10 @@ import { AuthService } from '../../services/auth.service';
 import { UserI } from '../../models/user';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
+  selector: 'bar-login',
+  templateUrl: './Login_Bar.component.html',
 })
-export class LoginComponent implements OnInit {
+export class BarLoginComponent implements OnInit {
 
   constructor(private authService: AuthService, private router: Router) { }
 
