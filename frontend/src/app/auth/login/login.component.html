@@ -3,35 +3,35 @@
             <div class="wrapper wrapper--w680">
                 <div class="card card-4">
                     <div class="card-body">
-                      <img src="assets/styleSecond/img/beer.png" width="25%" height="25%">
-                        <div class="ttl">Iniciar sesi&oacute;n</div>
-                        <div class="descrp">de usuario</div>
+                      <img src="assets/styleSecond/img/beer.png" class="col-4 offset-4 text-center" width="25%" height="25%">
+                        <div class="ttl col-12 text-center">Iniciar sesi&oacute;n</div>
+                        <div class="descrp col-12 text-center">de usuario</div>
                         <br>
                           <br>
                         <form #frmLogin="ngForm" (ngSubmit)="onLogin(frmLogin)">
     
-                                <div class="col-1">
+                                <div class="col-12">
                                     <div class="input-group">
                                         <label class="label">Correo</label>
                                         <input class="input--style-4" type="email" name="correo" ngModel Required>
                                     </div>
                                 </div>
     
-                            <div class="col-1">
+                            <div class="col-12">
                                 <div class="input-group">
                                     <label class="label">Contrase&ntilde;a</label>
                                     <input class="input--style-4" type="password" name="contrasenha" ngModel Required>
                                 </div>
                             </div>
     
-                            <div class="p-t-15">
+                            <div class="p-t-15 text-center">
                                 <button class="btn btn-1" type="submit" style="letter-spacing: 3pt;">Enviar</button>
                             </div>
                         </form>
                     <br>
                     <div>
-                    <p>¿No tienes cuenta?&nbsp;<a [routerLink]="['/auth/user-register']"><b>Registrarse</b></a></p>
-                    <p>¿Quieres iniciar sesi&oacute;n como bar?&nbsp;<a [routerLink]="['/auth/bar-login']"><b>Clic aquí</b></a></p>
+                    <p class="text-center">¿No tienes cuenta?&nbsp;<a [routerLink]="['/auth/user-register']"><b>Registrarse</b></a></p>
+                    <p class="text-center">¿Quieres iniciar sesi&oacute;n como bar?&nbsp;<a [routerLink]="['/auth/bar-login']"><b>Clic aquí</b></a></p>
                     </div>
                 </div>
             </div>

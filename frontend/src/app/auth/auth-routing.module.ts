@@ -5,8 +5,6 @@ import { BarRegisterComponent } from './register/bar-register.component';
 import { RegisterComponent } from './register/register.component';
 import { BarLoginComponent } from './login/bar-login.component';
 
-
-
 const routes: Routes = [
     { path: '', component: LoginComponent},
     { path: 'user-register', component: RegisterComponent },

@@ -3,14 +3,14 @@
         <div class="wrapper wrapper--w680">
             <div class="card card-4">
                 <div class="card-body">
-                  <img src="assets/styleSecond/img/beer.png" width="25%" height="25%">
-                    <div class="ttl">Registro</div>
-                    <div class="descrp">de bar</div>
+                  <img src="assets/styleSecond/img/beer.png" class=" offset-4 col-4 text-center" width="25%" height="25%">
+                    <div class="ttl text-center">Registro</div>
+                    <div class="descrp text-center">de bar</div>
                     <br>
                       <br>
                     <form method="POST">
                         <div class="row row-space">
-                          <img class="avatar" src="assets/styleSecond/img/user.jpg" id="img">
+                          <img class="avatar text-center" src="assets/styleSecond/img/user.jpg" id="img">
                         </div>
                         <br>
 
@@ -27,13 +27,13 @@
                         <br>
 
                         <div class="row row-space">
-                            <div class="col-2">
+                            <div class="col-6">
                                 <div class="input-group">
                                     <label class="label">Nombre de la empresa</label>
                                     <input class="input--style-4" type="text" name="nombres" style="text-transform: capitalize;" required>
                                 </div>
                             </div>
-                            <div class="col-2">
+                            <div class="col-6">
                                 <div class="input-group">
                                     <label class="label">Nombre del bar</label>
                                     <input class="input--style-4" type="text" name="apellidos" style="text-transform: capitalize;" Required>
@@ -50,7 +50,7 @@
 
 
                             <div class="row row-space">
-                                <div class="col-2">
+                                <div class="col-6">
                                     <div class="input-group">
                                       <input type="file" name="file-2" id="file-2" class="inputfile inputfile-2" data-multiple-caption="{count} archivos seleccionados" multiple />
                                       <label for="file-2">
@@ -59,7 +59,7 @@
                                       </label>
                                     </div>
                                 </div>
-                                <div class="col-2">
+                                <div class="col-6">
                                     <div class="input-group">
                                       <input type="file" name="file-2" id="file-2" class="inputfile inputfile-2" data-multiple-caption="{count} archivos seleccionados" multiple />
                                       <label for="file-2">
@@ -70,22 +70,20 @@
                                 </div>
                             </div>
 
-                                <div class="input-group">
+                                <div class="input-group text-center">
                                         <label class="radio-container m-r-45">Acepto <a href="#">Terminos y condiciones</a>
                                             <input type="checkbox" name="condiciones" required>
                                             <span class="checkmark"></span>
                                         </label>
                                 </div>
-
-
-                        <div class="p-t-15">
-                            <button class="btn btn-1" type="submit" style="letter-spacing: 3pt;">Enviar</button>
-                          </div>
+                        <div class="p-t-15 text-center">
+                            <button class="btn btn-1 text-center" type="submit" style="letter-spacing: 3pt;">Enviar</button>
+                        </div>
                         </form>
                         <br>
 
-                        <p>¿Ya tienes cuenta?&nbsp;<a [routerLink]="['/auth/login']"><b>Iniciar sesi&oacute;n</b></a></p>
-                        <p>¿Quieres registrarte como Usuarior?&nbsp;<a [routerLink]="['/auth/user-register']"><b>Clic aquí</b></a></p>
+                        <p class="text-center">¿Ya tienes cuenta?&nbsp;<a [routerLink]="['/auth/login']"><b>Iniciar sesi&oacute;n</b></a></p>
+                        <p class="text-center">¿Quieres registrarte como Usuarior?&nbsp;<a [routerLink]="['/auth/user-register']"><b>Clic aquí</b></a></p>
                 </div>
             </div>
         </div>

@@ -3,14 +3,14 @@
             <div class="wrapper wrapper--w680">
                 <div class="card card-4">
                     <div class="card-body">
-                      <img src="assets/styleSecond/img/beer.png" width="25%" height="25%">
-                        <div class="ttl">Registro</div>
-                        <div class="descrp">de usuario</div>
+                      <img src="assets/styleSecond/img/beer.png" class="offset-4 col-4 text-center" width="25%" height="25%">
+                        <div class="ttl text-center">Registro</div>
+                        <div class="descrp text-center">de usuario</div>
                         <br>
                           <br>
                         <form #frmRegister="ngForm" (ngSubmit)="onRegister(frmRegister)">
                             <div class="row row-space">
-                              <img class="avatar" src="assets/styleSecond/img/user.jpg" id="img">
+                              <img class="avatar text-center" src="assets/styleSecond/img/user.jpg" id="img">
                             </div>
                             <br>
     
@@ -27,13 +27,13 @@
                             <br>
     
                             <div class="row row-space">
-                                <div class="col-2">
+                                <div class="col-6">
                                     <div class="input-group">
                                         <label class="label">Nombre (s)</label>
                                         <input class="input--style-4" type="text" name="nombre" style="text-transform: capitalize;" ngModel required>
                                     </div>
                                 </div>
-                                <div class="col-2">
+                                <div class="col-6">
                                     <div class="input-group">
                                         <label class="label">Apellidos</label>
                                         <input class="input--style-4" type="text" name="apellido" style="text-transform: capitalize;" ngModel Required>
@@ -41,7 +41,7 @@
                                 </div>
                             </div>
                             <div class="row row-space">
-                                <div class="col-2">
+                                <div class="col-6">
                                     <div class="input-group">
                                         <label class="label">Fecha de nacimiento</label>
                                         <div class="input-group-icon">
@@ -50,7 +50,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-2">
+                                <div class="col-6">
                                     <div class="input-group">
                                         <label class="label">Sexo</label>
                                         <div class="p-t-10">
@@ -67,26 +67,26 @@
                                 </div>
                             </div>
                             <div class="row row-space">
-                                <div class="col-2">
+                                <div class="col-6">
                                     <div class="input-group">
                                         <label class="label">Correo</label>
                                         <input class="input--style-4" type="email" name="correo" ngModel Required>
                                     </div>
                                 </div>
-                                <div class="col-2">
+                                <div class="col-6">
                                     <div class="input-group">
                                         <label class="label">Contrase&ntilde;a</label>
                                         <input class="input--style-4" type="password" name="contrasenha" ngModel Required>
                                     </div>
                                 </div>
                             </div>
-                            <div class="p-t-15">
+                            <div class="p-t-15 text-center">
                                 <button class="btn btn-1" type="submit" style="letter-spacing: 3pt;">Enviar</button>
                             </div>
                         </form>
                             <br>
-                            <p>¿Ya tienes cuenta?&nbsp;<a [routerLink]="['/auth/login']"><b>Iniciar sesi&oacute;n</b></a></p>
-                            <p>¿Quieres registrarte como bar?&nbsp;<a [routerLink]="['/auth/bar-register']"><b>Clic aquí</b></a></p>
+                            <p class="text-center">¿Ya tienes cuenta?&nbsp;<a [routerLink]="['/auth/login']"><b>Iniciar sesi&oacute;n</b></a></p>
+                            <p class="text-center">¿Quieres registrarte como bar?&nbsp;<a [routerLink]="['/auth/bar-register']"><b>Clic aquí</b></a></p>
                     </div>
 
                     
