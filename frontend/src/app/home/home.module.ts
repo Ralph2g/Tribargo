@@ -19,4 +19,4 @@ import { InicioComponent } from './inicio/inicio.component';
   ],
   providers: [HomeRoutingModule]
 })
-export class AuthModule { }
+export class HomeModule { }

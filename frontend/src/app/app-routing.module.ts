@@ -1,9 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-
+import { AppComponent } from './app.component'
 const routes: Routes = [
-  { path: '', redirectTo:'/auth', pathMatch: 'full'},
-  { path:'auth', loadChildren: './auth/auth.module#AuthModule'},
+  { 
+      path: '', component: AppComponent,
+      children:[
+        { path:'auth', loadChildren: './auth/auth.module#AuthModule'},
+        { path:'home', loadChildren: './home/home.module#HomeModule'},
+  ]},
 ];
 
 @NgModule({

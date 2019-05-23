@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
+
+//componente personalizados 
 import { BarRegisterComponent } from './register/bar-register.component';
 import { RegisterComponent } from './register/register.component';
 import { BarLoginComponent } from './login/bar-login.component';
