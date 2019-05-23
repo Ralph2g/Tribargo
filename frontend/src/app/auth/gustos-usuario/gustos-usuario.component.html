@@ -1,0 +1,26 @@
+<div>
+  <h1>¿Que es lo que me gusta?</h1>
+  <p>Indicanos cuales son tus gustos y preferencias</p>
+  <h3>Cerveza</h3>
+  <!--Agregar marcas-->
+  <li *ngFor="let mark of marks">
+    {{mark}} <button (click)= "insertMark(mark)">+</button>
+  </li>
+  <!--Seleccion y eliminacion-->
+  <h4>Seleccionaste</h4>
+  <li *ngFor="let select1 of selection1">
+      {{select1}} <button (click)= "deleteMark(select1)">X</button>
+  </li>
+  <h3>Musica</h3>
+  <!--Agregar marcas-->
+  <li *ngFor="let genre of genres">
+    {{genre}} <button (click)= "insertGenre(genre)">+</button>
+  </li>
+  <!--Seleccion y eliminacion-->
+  <h4>Seleccionaste</h4>
+  <li *ngFor="let select2 of selection2">
+      {{select2}} <button (click)= "deleteGenre(select2)">X</button>
+  </li>
+</div>
+
+ 
