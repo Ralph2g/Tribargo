@@ -1,1 +1,26 @@
+
 <router-outlet></router-outlet>
+<div id="content" *ngIf="token">
+    <div class="container">
+        <div class="row">
+            <header class="col-12" id="header" [style.background]="header_color">
+                <h1 class="col-12 text-center">{{title}}</h1>
+          </header>
+          <nav id="nav" class="col-12 text-center">
+            <ul class="row">
+                <li class="offset-1"><a [routerLink]="['/home']" [routerLinkActive]="['activado']">Home</a></li>
+              <li class=""><a [routerLink]="['/productos-list']" [routerLinkActive]="['activado']">Productos</a></li>
+              <li class=""><a [routerLink]="['/crear-producto']" [routerLinkActive]="['activado']">Crear Productos</a></li>
+            </ul>
+        </nav>
+          <section id="main" class="col-10 offset-1">
+              <!--Componente actual-->
+            </section>
+            
+            <footer id="footer" class="col-12">
+                <p>Curso de angular 4</p>
+            </footer>
+        </div>
+    </div>
+</div>
+      

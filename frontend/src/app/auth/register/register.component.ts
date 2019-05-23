@@ -6,7 +6,6 @@ import { UserI } from '../../models/user';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
   
@@ -18,6 +17,12 @@ export class RegisterComponent implements OnInit {
   onRegister(form):void{
     this.authService.register(form.value).subscribe( res =>{
       this.router.navigateByUrl('/auth');
-    });
+
+    },
+    error =>{
+      console.log(error);
+      
+    }
+    );
   }
 }

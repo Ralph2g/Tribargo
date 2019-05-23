@@ -7,4 +7,16 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'frontend';
+  //Atributo que manejara el token
+
+  public token: string;
+
+  constructor (){
+
+    this.token = null;
+
+  }
+
+
+
 }
