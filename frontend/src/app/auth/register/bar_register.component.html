@@ -1,0 +1,106 @@
+<body class="bg-gra-02">
+    <div class="page-wrapper  p-t-130 p-b-100 font-poppins">
+        <div class="wrapper wrapper--w680">
+            <div class="card card-4">
+                <div class="card-body">
+                  <img src="assets/styleSecond/img/beer.png" class=" offset-4 col-4 text-center" width="25%" height="25%">
+                    <div class="ttl text-center">Registro</div>
+                    <div class="descrp text-center">de bar</div>
+                    <br>
+                      <br>
+                    <form method="POST">
+                        <div class="row row-space">
+                          <img class="avatar text-center" src="assets/styleSecond/img/user.jpg" id="img">
+                        </div>
+                        <br>
+
+                        <div class="row row-space">
+                          <input type="file" onchange="preview(event)" name="file-1" id="file-1" class="center inputfile inputfile-1" data-multiple-caption="{count} archivos seleccionados" />
+                          <label for="file-1">
+                          <svg xmlns="http://www.w3.org/2000/svg" class="iborrainputfile" width="20" height="17" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"></path></svg>
+                          <span class="iborrainputfile">Seleccionar foto</span>
+                          </label>
+
+                        </div>
+
+                        <br>
+                        <br>
+
+                        <div class="row row-space">
+                            <div class="col-6">
+                                <div class="input-group">
+                                    <label class="label">Nombre de la empresa</label>
+                                    <input class="input--style-4" type="text" name="nombres" style="text-transform: capitalize;" required>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="input-group">
+                                    <label class="label">Nombre del bar</label>
+                                    <input class="input--style-4" type="text" name="apellidos" style="text-transform: capitalize;" Required>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                            <div class="input-group">
+                              <label class="label">Ubicaci&oacute;n del bar</label>
+                              <input class="input--style-4" type="text" name="apellidos"  Required>
+                            </div>
+
+
+                            <div class="row row-space">
+                                <div class="col-6">
+                                    <div class="input-group">
+                                      <input type="file" name="file-2" id="file-2" class="inputfile inputfile-2" data-multiple-caption="{count} archivos seleccionados" multiple />
+                                      <label for="file-2">
+                                      <svg xmlns="http://www.w3.org/2000/svg" class="iborrainputfile" width="20" height="17" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"></path></svg>
+                                      <span class="iborrainputfile">Seleccionar archivo</span>
+                                      </label>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="input-group">
+                                      <input type="file" name="file-2" id="file-2" class="inputfile inputfile-2" data-multiple-caption="{count} archivos seleccionados" multiple />
+                                      <label for="file-2">
+                                      <svg xmlns="http://www.w3.org/2000/svg" class="iborrainputfile" width="20" height="17" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"></path></svg>
+                                      <span class="iborrainputfile">Seleccionar archivo</span>
+                                      </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                                <div class="input-group text-center">
+                                        <label class="radio-container m-r-45">Acepto <a href="#">Terminos y condiciones</a>
+                                            <input type="checkbox" name="condiciones" required>
+                                            <span class="checkmark"></span>
+                                        </label>
+                                </div>
+                        <div class="p-t-15 text-center">
+                            <button class="btn btn-1 text-center" type="submit" style="letter-spacing: 3pt;">Enviar</button>
+                        </div>
+                        </form>
+                        <br>
+
+                        <p class="text-center">¿Ya tienes cuenta?&nbsp;<a [routerLink]="['/auth/login']"><b>Iniciar sesi&oacute;n</b></a></p>
+                        <p class="text-center">¿Quieres registrarte como Usuarior?&nbsp;<a [routerLink]="['/auth/user-register']"><b>Clic aquí</b></a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Avatar-->
+    <script>
+      function preview(event){
+        var input = event.target.files[0];
+        var reader = new FileReader();
+        reader.onload = function(){
+          var result = reader.result;
+          var img = document.getElementById('img');
+          img.src = result;
+        }
+        reader.readAsDataURL(input);
+      }
+    </script>
+
+</body>

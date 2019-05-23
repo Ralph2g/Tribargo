@@ -6,7 +6,6 @@ import { UserI } from '../../models/user';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
 
@@ -17,8 +16,11 @@ export class LoginComponent implements OnInit {
 
   onLogin(form):void{
     this.authService.login(form.value).subscribe(res => {
-      this.router.navigateByUrl('/auth');
-    })
+      this.router.navigateByUrl('/auth/bar-register');
+    },
+    error =>{
+      console.log(error);
+    });
   }
 
 }
