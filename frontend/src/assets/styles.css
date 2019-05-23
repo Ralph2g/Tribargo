@@ -1,0 +1,87 @@
+.activado{
+    text-decoration: none !important;
+    background: #E03137 !important;
+    border-bottom: 4px solid yellow !important;
+}
+#content{
+    margin-top:30px;
+    border:1px solid #eee; 
+    background: white;
+    border-radius: 2px;
+    box-shadow: 0 2px 5px gray;
+    padding: 0;
+    overflow: hidden;
+}
+#header{
+    background: red;
+    margin: 0px;
+    color: white;
+
+    line-height: 90px;
+}
+#header h1{
+    display:block;
+    line-height: 50px;
+    font-weight: bold;
+    font-size: 30px;
+}
+#nav {
+    padding: 0;
+    margin: 0;
+    background: rgba(224, 49, 55, 0.67);
+}
+
+#nav ul{
+    margin: 0;
+    list-style: none;
+    padding-left: 20px; 
+}
+
+#nav ul li{
+    float: left;
+    margin-right: 20px
+}
+#nav ul li a{
+    display: block;
+    color: white;
+    height: 30px;
+    line-height: 29px;
+    padding-right: 10px;
+    padding-left: 10px;
+    transition: all 300ms;
+}
+
+#nav ul li a:hover{
+    text-decoration: none;
+    background: red;
+}
+#main {
+    width: 100%
+}
+
+#main .jumbotron{
+    padding-left: 3rem;
+    margin-top: 2rem;
+}
+
+#formProducto{
+    margin-top: .8rem;
+}
+.producto_imagen{
+    max-height: 200px;
+    max-width: 100%;
+    display: block;
+    margin: 0px auto;
+}
+.img-relleno{
+    background: #ccc;
+    width: 100%;
+    height: 10rem
+}
+
+#footer{
+    margin-top: 1rem;
+    padding-left: 5rem;
+    border-top: 1px solid #eee;
+    color: gray;
+}
