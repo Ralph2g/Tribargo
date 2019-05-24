@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { UserI } from '../models/user';
 import { JwtResponseI } from '../models/jwt-response';
 import { tap } from 'rxjs/operators';
@@ -54,17 +54,5 @@ export class AuthService {
     }
     return this.token;
   }
-
-/*   private getIdentity():Observable<any>{
-    let headers = new HttpHeaders().set("Content-Type","application/json")
-                    .set("Authorization", this.getToken())
-
-    let identity = JSON.parse(localStorage.getItem(''))
-  } */
-
-  
-
-  
-
 
 }

@@ -9,15 +9,14 @@ import { UserI } from '../../models/user';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private _authService: AuthService, private _router: Router) { }
+  constructor(private authService: AuthService, private router: Router) { }
 
   ngOnInit() {
   }
 
   onLogin(form):void{
-    this._authService.login(form.value).subscribe(res => {
-      
-      this._router.navigateByUrl('/home');
+    this.authService.login(form.value).subscribe(res => {
+      this.router.navigateByUrl('/auth/bar-register');
     },
     error =>{
       console.log(error);
