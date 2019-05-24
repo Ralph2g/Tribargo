@@ -1,92 +1,26 @@
-<body class="bg-gra-02">
-    <div class="page-wrapper  p-t-130 p-b-100 font-poppins">
-        <div class="wrapper wrapper--w680">
-            <div class="card card-4">
-                <div class="card-body">
-                  <div class="container-fluid py-2 bg-white">
-                    <img src="assets/styleSecond/img/beer.png"  class="rounded col-4 offset-4 text-center" width="25%" height="25%"> 
-                  </div>
-                  <div class="container py-2">
-                    <p class="descrp text-center">¿Qu&eacute; es lo que me gusta?</p>
-                    <br>
-                    <p class="lead">Indicanos cu&aacute;les son tus gustos y preferencias</p>
-                  </div>
+<div>
+  <h1>¿Que es lo que me gusta?</h1>
+  <p>Indicanos cuales son tus gustos y preferencias</p>
+  <h3>Cerveza</h3>
+  <!--Agregar marcas-->
+  <li *ngFor="let mark of marks">
+    {{mark}} <button (click)= "insertMark(mark)">+</button>
+  </li>
+  <!--Seleccion y eliminacion-->
+  <h4>Seleccionaste</h4>
+  <li *ngFor="let select1 of selection1">
+      {{select1}} <button (click)= "deleteMark(select1)">X</button>
+  </li>
+  <h3>Musica</h3>
+  <!--Agregar marcas-->
+  <li *ngFor="let genre of genres">
+    {{genre}} <button (click)= "insertGenre(genre)">+</button>
+  </li>
+  <!--Seleccion y eliminacion-->
+  <h4>Seleccionaste</h4>
+  <li *ngFor="let select2 of selection2">
+      {{select2}} <button (click)= "deleteGenre(select2)">X</button>
+  </li>
+</div>
 
-                  <div class="container py-2 page-wrapper font-poppins bg-white">
-                    <div class="row">
-                      <div class="col-sm-12 col-md-6 col-lg-6">
-                        <h3 class="text-danger">Cerveza</h3>
-                        <!--Agregar marcas-->
-                        <p *ngFor="let mark of marks">
-                          {{mark}} <button (click)= "insertMark(mark)"><b>+</b></button>
-                        </p>
-                      </div>
-
-                      <!--Seleccion y eliminacion-->
-                      <div class="col-sm-12 col-md-6 col-lg-6">
-                        <h4 class="text-primary">Seleccionaste</h4>
-                        <p *ngFor="let select1 of selection1">
-                          {{select1}} <button (click)= "deleteMark(select1)"><b>x</b></button>
-                        </p>
-                      </div>
-                    </div> 
-
-                    <div class="row">
-                      <div class="col-sm-12 col-md-6 col-lg-6">
-                        <h3 class="text-danger">M&uacute;sica</h3>
-                        <!--Agregar marcas-->
-                        <p *ngFor="let genre of genres">
-                          {{genre}} <button (click)= "insertGenre(genre)"><b>+</b></button>
-                        </p>
-                      </div>
-  
-                      <!--Seleccion y eliminacion-->
-                      <div class="col-sm-12 col-md-6 col-lg-6">
-                        <h4 class="text-primary">Seleccionaste</h4>
-                        <p *ngFor="let select2 of selection2">
-                          {{select2}} <button (click)= "deleteGenre(select2)"><b>x</b></button>
-                        </p>
-                      </div>
-                      </div>
-
-                    <div class="row">
-                      <div class="col-sm-12 col-md-6 col-lg-6">
-                        <h3 class="text-danger">Ofertas</h3>
-                        <!--Agregar ofertas-->
-                        <p *ngFor="let offer of offers">
-                          {{offer}} <button (click)= "insertOffers(offer)"><b>+</b></button>
-                        </p>
-                    </div>
-    
-                    <!--Seleccion y eliminacion-->
-                    <div class="col-sm-12 col-md-6 col-lg-6">
-                      <h4 class="text-primary">Seleccionaste</h4>
-                      <p *ngFor="let select3 of selection3">
-                        {{select3}} <button (click)= "deleteOffers(select3)"><b>x</b></button>
-                      </p>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-sm-12 col-md-6 col-lg-6">
-                      <h3 class="text-danger">Snacks</h3>
-                      <!--Agregar marcas-->
-                      <p *ngFor="let snack of snacks">
-                        {{snack}} <button (click)= "insertSnacks(snack)"><b>+</b></button>
-                      </p>
-                    </div>
-      
-                      <!--Seleccion y eliminacion-->
-                      <div class="col-sm-12 col-md-6 col-lg-6">
-                        <h4 class="text-primary">Seleccionaste</h4>
-                        <p *ngFor="let select4 of selection4">
-                          {{select4}} <button (click)= "deleteSnacks(select4)"><b>x</b></button>
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</body>
+ 
