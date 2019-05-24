@@ -9,8 +9,12 @@ export class GustosUsuarioComponent implements OnInit {
  
   marks: string [] = ['XX','Carta Blanca','Indio', 'Corona', 'Heineken'];
   genres: string [] = ['Rock','Reggaeton','Pop', 'Banda', 'Bachata','Ranchera'];
+  offers: string [] = ['2x1','Barra libre','Mujeres no pagan'];
+  snacks: string [] = ['Totopos','Nachos','Papas','Pizza','Chicharrones'];
   selection1: string [] = [];
   selection2: string [] = [];
+  selection3: string [] = [];
+  selection4: string [] = [];
   
   insertMark(mark){
     let repetir = 0;
@@ -42,6 +46,36 @@ export class GustosUsuarioComponent implements OnInit {
     }
   }
 
+  insertOffers(offer){
+    let repetir = 0;
+    for(let i=0; i< this.selection3.length; i++)
+    {
+      if(offer == this.selection3[i])
+      {
+        repetir = 1;
+      }     
+    }
+    if(repetir == 0 )
+    {
+      this.selection3.push(offer);
+    }
+  }
+
+  insertSnacks(snack){
+    let repetir = 0;
+    for(let i=0; i< this.selection4.length; i++)
+    {
+      if(snack == this.selection4[i])
+      {
+        repetir = 1;
+      }     
+    }
+    if(repetir == 0 )
+    {
+      this.selection4.push(snack);
+    }
+  }
+
   deleteMark(select1){
     for(let i=0; i< this.selection1.length; i++)
     {
@@ -60,6 +94,27 @@ export class GustosUsuarioComponent implements OnInit {
       }
     }
   }
+
+  deleteOffers(select3){
+    for(let i=0; i< this.selection3.length; i++)
+    {
+      if(select3 == this.selection3[i])
+      {
+        this.selection3.splice(i,1);      
+      }
+    }
+  }
+
+  deleteSnacks(select4){
+    for(let i=0; i< this.selection4.length; i++)
+    {
+      if(select4 == this.selection4[i])
+      {
+        this.selection4.splice(i,1);      
+      }
+    }
+  }
+
 
   constructor() { }
 
