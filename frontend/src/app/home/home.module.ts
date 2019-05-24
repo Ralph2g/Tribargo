@@ -1,22 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
-import { HomeRoutingModule } from './home-routing.module'
-
-//Modulos PErsonalizador
-import { InicioComponent } from './inicio/inicio.component';
+import { TrendComponent } from './trend/trend.component';
+import { EventosComponent } from './eventos/eventos.component';
+import { MapaComponent } from './mapa/mapa.component';
 
 @NgModule({
-  declarations: [
-        InicioComponent,
-                ],
+  declarations: [TrendComponent, EventosComponent, MapaComponent],
   imports: [
-    CommonModule,
-    FormsModule, 
-    HomeRoutingModule,
-    HttpClientModule    
-  ],
-  providers: [HomeRoutingModule]
+    CommonModule
+  ]
 })
 export class HomeModule { }
