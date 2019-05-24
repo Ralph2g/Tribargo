@@ -15,7 +15,8 @@ export const HomeRoutes: Route[] = [
     children: [
       { path: '', component: EventosComponent },
       { path: 'trend', component: TrendComponent },
-      { path: 'mapa', component: MapaComponent }
+      { path: 'mapa', component: MapaComponent },
+      
   ]},
     
 ];
