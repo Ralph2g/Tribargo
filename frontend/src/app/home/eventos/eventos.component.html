@@ -1,4 +1,29 @@
 
-<p class=" col-12 text-center">
-    eventos works!
-  </p>
+<div class="col-12 text-center" id="bar-tag" *ngFor="let sugerencia of sugerencias">
+    <div class="container">
+      <div class="row">
+
+        <div class="bar-header col-12 d-flex">
+          <h2 class="bar-name">
+            {{sugerencia.nombre}}
+          </h2>
+          <p class="bar-ranking">
+            {{sugerencia.puntuacion}}
+          </p>
+          <p class="bar-cost">
+            {{sugerencia.costo}}
+          </p>
+        </div>
+        <img src="assdad" class="bar-image"alt="Imagen-bar">
+        <div class="bar-offering">
+          {{sugerencia.productos}}
+          {{sugerencia.musica}}
+        </div>
+        <div class="bar-description">
+          {{sugerencia.ubicacion}}
+        </div>
+      </div>
+    </div>
+</div>
+<br>
+<br>

@@ -67,8 +67,46 @@
     height: 35.5rem;
     margin: .2rem 0 1rem 0;
     border: var(--main-color) .1rem solid;
-    
+
 }
+
+.dashboard #bar-tag{
+    margin: .8rem 0 .8rem 0;
+    display: block;
+    border: var(--second-color) .1rem solid;
+}
+
+.dashboard .bar-header .bar-name{
+    text-align: left;
+    display: inline-block;
+    font-size: 2.5rem;
+    margin-right: 2rem;
+    flex: 0 0 14rem;
+}
+
+.dashboard .bar-header .bar-cost{
+    display: inline-block;
+    font-size: 2.5rem;
+    margin-right: 2rem;
+    flex: auto 0 auto;
+    text-align: right;
+}
+
+.dashboard .bar-header .bar-ranking{
+    display: inline-block;
+    font-size: 2.5rem;
+    margin-right: .2rem;
+    flex: 1 0 auto;
+    text-align: left;
+}
+.dashboard .bar-header .bar-image{
+    display: block;
+    margin-right: .2rem;
+    flex: 0 0 500px;
+}
+
+
+
 
 /*-----------------fin Dashboard---------------*/
 
@@ -81,6 +119,8 @@
     margin: .2rem 0 1rem 0;
     border: var(--main-color) .1rem solid;
 }
+
+
 /*-----------------fin panel---------------*/
 /*------PAGE FOOTER-------*/
 
