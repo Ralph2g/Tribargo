@@ -1,87 +1,90 @@
-.activado{
-    text-decoration: none !important;
-    background: #E03137 !important;
-    border-bottom: 4px solid yellow !important;
-}
-#content{
-    margin-top:30px;
-    border:1px solid #eee; 
-    background: white;
-    border-radius: 2px;
-    box-shadow: 0 2px 5px gray;
-    padding: 0;
-    overflow: hidden;
-}
-#header{
-    background: red;
-    margin: 0px;
-    color: white;
+/*Paleta de colores*/
 
-    line-height: 90px;
+:root{
+    --main-color : #e0860b;
+    --second-color: #facf57;
+    --third-color: #5c3b17;
+    --Titulo-letra: #ef7659;
+    --light-back: #fafafa;
 }
-#header h1{
-    display:block;
-    line-height: 50px;
-    font-weight: bold;
-    font-size: 30px;
-}
-#nav {
-    padding: 0;
-    margin: 0;
-    background: rgba(224, 49, 55, 0.67);
+/*Estilos Generales*/
+
+.body{
+    background: var(--light-back) !important ;
 }
 
-#nav ul{
-    margin: 0;
-    list-style: none;
-    padding-left: 20px; 
+/*----------------------------------------------
++++++++++++++++   Navbar Page   +++++++++++++++
+----------------------------------------------*/
+.navbar{
+    background: #fafafa;
+    border-radius: 0 0 .5rem .5rem ;
+    border: var(--second-color) .3rem solid;
+    border-top: inherit;
+    border-left: inherit;
+    border-right: inherit;
 }
-
-#nav ul li{
-    float: left;
-    margin-right: 20px
-}
-#nav ul li a{
+.navbar .nav-image{
     display: block;
-    color: white;
-    height: 30px;
-    line-height: 29px;
-    padding-right: 10px;
-    padding-left: 10px;
-    transition: all 300ms;
+}
+.navbar .nav-image img {
+    max-width: 220px;
 }
 
-#nav ul li a:hover{
-    text-decoration: none;
-    background: red;
-}
-#main {
-    width: 100%
-}
-
-#main .jumbotron{
-    padding-left: 3rem;
-    margin-top: 2rem;
-}
-
-#formProducto{
-    margin-top: .8rem;
-}
-.producto_imagen{
-    max-height: 200px;
-    max-width: 100%;
-    display: block;
-    margin: 0px auto;
-}
-.img-relleno{
-    background: #ccc;
-    width: 100%;
-    height: 10rem
-}
-
-#footer{
+.navbar #secciones{
+    color: #5c3b17;
     margin-top: 1rem;
-    padding-left: 5rem;
-    border-top: 1px solid #eee;
-    color: gray;
+}
+
+.navbar #secciones .nav-link{
+    color: #5c3b17;
+    border-right: var(--main-color) .3rem solid;
+    min-width: 7.5rem;
+    text-align: center;
+    font-weight: 400;
+}
+
+.navbar #secciones #search{
+    font-size: 2rem;
+    color: var(--main-color);
+    margin: 0 2rem;
+}
+
+.navbar #secciones #profile-icon{
+    font-size: 2.5rem;
+    color: var(--main-color);
+    margin: auto 2rem auto auto
+
+}
+/*-----------------Fin navbar---------------*/
+
+
+/*----------------------------------------------
++++++++++++++   Dashboard page   +++++++++++++++
+----------------------------------------------*/
+
+.dashboard{
+    height: 35.5rem;
+    margin: .2rem 0 1rem 0;
+    border: var(--main-color) .1rem solid;
+    
+}
+
+/*-----------------fin Dashboard---------------*/
+
+/*----------------------------------------------
++++++++++++++++   Panel page   +++++++++++++++++
+----------------------------------------------*/
+
+.panel{
+    height: 35.5rem;
+    margin: .2rem 0 1rem 0;
+    border: var(--main-color) .1rem solid;
+}
+/*-----------------fin panel---------------*/
+/*------PAGE FOOTER-------*/
+
+.page-footer{
+    background-color: var(--second-color);
+    font-size: 1rem;
 }

@@ -4,8 +4,9 @@ import { TrendComponent } from './trend/trend.component';
 import { EventosComponent } from './eventos/eventos.component';
 import { MapaComponent } from './mapa/mapa.component';
 
+
 @NgModule({
-  declarations: [TrendComponent, EventosComponent, MapaComponent],
+  declarations: [TrendComponent, EventosComponent, MapaComponent,],
   imports: [
     CommonModule
   ]
