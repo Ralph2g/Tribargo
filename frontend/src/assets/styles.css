@@ -10,7 +10,7 @@
 /*Estilos Generales*/
 
 .body{
-    background: var(--light-back) !important ;
+    
 }
 
 /*----------------------------------------------
@@ -60,14 +60,31 @@
 
 
 /*----------------------------------------------
++++++++++++++   Preconfiguración   +++++++++++++++
+----------------------------------------------*/
+
+.contenido{
+    display: flex;
+    background-size: auto;
+    background-size: cover;
+    height: 100vh;
+    flex-direction: column;
+}
+.contenido-hijos{
+
+    display: flex;
+    flex: 1 1 auto;
+    align-items: center;
+    text-align: center;
+}
+/*----------------------------------------------
 +++++++++++++   Dashboard page   +++++++++++++++
 ----------------------------------------------*/
 
 .dashboard{
     height: 35.5rem;
-    margin: .2rem 0 1rem 0;
     border: var(--main-color) .1rem solid;
-
+    background-color: var(--light-back);
 }
 
 .dashboard #bar-tag{
@@ -79,30 +96,40 @@
 .dashboard .bar-header .bar-name{
     text-align: left;
     display: inline-block;
-    font-size: 2.5rem;
+    font-size: 2rem;
     margin-right: 2rem;
     flex: 0 0 14rem;
+    margin-bottom: 0 !important;
 }
 
 .dashboard .bar-header .bar-cost{
     display: inline-block;
-    font-size: 2.5rem;
+    font-size: 2rem;
     margin-right: 2rem;
     flex: auto 0 auto;
     text-align: right;
+    margin-bottom: 0 !important;
 }
 
 .dashboard .bar-header .bar-ranking{
     display: inline-block;
-    font-size: 2.5rem;
+    font-size: 2rem;
     margin-right: .2rem;
     flex: 1 0 auto;
     text-align: left;
+    margin-bottom: 0 !important;
 }
-.dashboard .bar-header .bar-image{
+
+.dashboard .cont-description .cont-image .bar-image{
+    margin: .5rem 1rem .5rem 0;
     display: block;
     margin-right: .2rem;
-    flex: 0 0 500px;
+    max-width: 100px;
+    max-height: 100px;
+}
+.dashboard .separador{
+    border-right: var(--second-color) .5rem dashed;
+    margin: 1rem .5rem 1rem .5rem;
 }
 
 
@@ -115,16 +142,55 @@
 ----------------------------------------------*/
 
 .panel{
+    display: flex;
     height: 35.5rem;
-    margin: .2rem 0 1rem 0;
+    margin: 0 0 1rem 0;
     border: var(--main-color) .1rem solid;
+    background-color: var(--light-back);
+    flex-direction: column;
+}
+/*___________Componente trend___________*/
+.trend{
+    flex: 0 0 50%;
+}
+.trend .container{
+    border: var(--second-color) .1rem solid;
+    height: 100%;
+    margin: .8rem 0 0 0
+}
+.trend .trend-top{
+    display: flex;
+}
+.trend .top-description{
+    display: flex;
+    flex-direction: column;
+}
+.trend .top-description p{
+    display: inline-block;
+    font-size: 1rem;
+    margin-bottom: 0;
+}
+.trend .top-image{
+    display: block;
+    max-width: 50px;
+    max-height: 50px;
+}
+
+/*___________Componente Mapa___________*/
+.mapa{
+    flex: 0 0 50%;
+}
+.mapa .container{
+    border: var(--second-color) .1rem solid;
+    height: 100%;
+    margin: -.8rem 0 .8rem 0
 }
 
 
 /*-----------------fin panel---------------*/
 /*------PAGE FOOTER-------*/
 
-.page-footer{
+footer{
     background-color: var(--second-color);
     font-size: 1rem;
 }

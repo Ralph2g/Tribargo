@@ -16,6 +16,8 @@ import { AuthComponent } from './auth/auth.component';
 import { HomeModule } from './home/home.module';
 import { AuthModule } from './auth/auth.module';
 import { FormsModule } from '@angular/forms';
+import { TrendComponent } from './home/trend/trend.component';
+import { MapaComponent } from './home/mapa/mapa.component';
 
 
 @NgModule({
@@ -24,6 +26,9 @@ import { FormsModule } from '@angular/forms';
     HomeComponent,
     AuthComponent,
     NoPageComponent,
+    //Importacion de componentes generales
+    TrendComponent,
+    MapaComponent
   ],
   imports: [
     HttpClientModule,

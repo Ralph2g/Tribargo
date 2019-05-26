@@ -46,7 +46,7 @@ export class EventosComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log("El costo de este lugar en promedio es:"+this.sugerencias[0].costo )
+    console.log("El costo de este lugar en promedio es:"+this.sugerencias[0])
   }
 
 }

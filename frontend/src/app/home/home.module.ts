@@ -1,12 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TrendComponent } from './trend/trend.component';
 import { EventosComponent } from './eventos/eventos.component';
-import { MapaComponent } from './mapa/mapa.component';
+import { SugerenciaComponent } from './sugerencia/sugerencia.component';
+import { PromocionesComponent } from './promociones/promociones.component';
+import { MusicaComponent } from './musica/musica.component';
 
 
 @NgModule({
-  declarations: [TrendComponent, EventosComponent, MapaComponent,],
+  declarations: [ EventosComponent, SugerenciaComponent, PromocionesComponent, MusicaComponent,],
   imports: [
     CommonModule
   ]
