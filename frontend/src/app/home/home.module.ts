@@ -1,22 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
-import { HomeRoutingModule } from './home-routing.module'
+import { EventosComponent } from './eventos/eventos.component';
+import { SugerenciaComponent } from './sugerencia/sugerencia.component';
+import { PromocionesComponent } from './promociones/promociones.component';
+import { MusicaComponent } from './musica/musica.component';
 
-//Modulos PErsonalizador
-import { InicioComponent } from './inicio/inicio.component';
 
 @NgModule({
-  declarations: [
-        InicioComponent,
-                ],
+  declarations: [ EventosComponent, SugerenciaComponent, PromocionesComponent, MusicaComponent,],
   imports: [
-    CommonModule,
-    FormsModule, 
-    HomeRoutingModule,
-    HttpClientModule    
-  ],
-  providers: [HomeRoutingModule]
+    CommonModule
+  ]
 })
 export class HomeModule { }

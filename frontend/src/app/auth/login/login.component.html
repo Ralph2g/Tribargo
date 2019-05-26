@@ -1,40 +1,59 @@
-<body class="bg-gra-02">
-        <div class="page-wrapper  p-t-130 p-b-100 font-poppins">
-            <div class="wrapper wrapper--w680">
-                <div class="card card-4">
-                    <div class="card-body">
-                      <img src="assets/styleSecond/img/beer.png" class="col-4 offset-4 text-center" width="25%" height="25%">
-                        <div class="ttl col-12 text-center">Iniciar sesi&oacute;n</div>
-                        <div class="descrp col-12 text-center">de usuario</div>
-                        <br>
-                          <br>
-                        <form #frmLogin="ngForm" (ngSubmit)="onLogin(frmLogin)">
-    
-                                <div class="col-12">
-                                    <div class="input-group">
-                                        <label class="label">Correo</label>
-                                        <input class="input--style-4" type="email" name="correo" ngModel Required>
-                                    </div>
-                                </div>
-    
-                            <div class="col-12">
-                                <div class="input-group">
-                                    <label class="label">Contrase&ntilde;a</label>
-                                    <input class="input--style-4" type="password" name="contrasenha" ngModel Required>
-                                </div>
-                            </div>
-    
-                            <div class="p-t-15 text-center">
-                                <button class="btn btn-1" type="submit" style="letter-spacing: 3pt;">Enviar</button>
-                            </div>
-                        </form>
-                    <br>
-                    <div>
-                    <p class="text-center">¿No tienes cuenta?&nbsp;<a [routerLink]="['/auth/user-register']"><b>Registrarse</b></a></p>
-                    <p class="text-center">¿Quieres iniciar sesi&oacute;n como bar?&nbsp;<a [routerLink]="['/auth/bar-login']"><b>Clic aquí</b></a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</body>
+
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+				<form class="login100-form validate-form" #frmLogin="ngForm" (ngSubmit)="onLogin(frmLogin)">
+					<img src="assets/images/beer.png" width="25%" height="25%">
+                    <div class="ttl">Inicio de sesi&oacute;n</div>
+                    <div class="descrp">de usuario</div>
+
+					<br>
+					<br>
+
+					<div class="wrap-input100 validate-input" data-validate = "No es un correo v&aacute;lido">
+						<input class="input100" type="email" name="correo" ngModel required>
+						<span class="focus-input100" data-placeholder="Correo" ></span>
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate="Escribe una contrase&ntilde;a">
+						<span class="btn-show-pass">
+							<i class="zmdi zmdi-eye"></i>
+						</span>
+						<input class="input100" type="password" name="contrasenha" ngModel required>
+						<span class="focus-input100" data-placeholder="Password"></span>
+					</div>
+
+
+					<div class="container-login100-form-btn">
+						<div class="wrap-login100-form-btn">
+							<div class="login100-form-bgbtn"></div>
+							<button class="login100-form-btn">
+								Iniciar
+							</button>
+						</div>
+					</div>
+
+						<br>
+						<br>
+					<div class="text-center p-t-115">
+						<span class="txt1">
+							¿No tienes cuenta?&nbsp;
+						</span>
+
+						<a class="txt2" [routerLink]="['/user-register']">
+							<b>Registrarse</b>
+						</a>
+					</div>
+					<div class="text-center p-t-115">
+						<span class="txt1">
+							¿Quieres registrarte como bar?&nbsp;
+						</span>
+
+						<a class="txt2" [routerLink]="['/bar-login']">
+							<b>Clic aquí</b>
+						</a>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
