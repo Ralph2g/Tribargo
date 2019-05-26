@@ -1,0 +1,65 @@
+<!-- Navbar -->
+<div class="contenido">
+
+  <nav class="navbar navbar-expand-lg navbar-dark  static-top">
+    <div class="container">
+      <a class="nav-image" [routerLink]="['/']" id="">
+        <img src="../../assets/images/Logo.png" alt=Logo>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="secciones">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Lugares</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Musica-Baile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Promociones</a>
+          </li>
+          <li>
+            <a href="#" id="search"><i class="fa fa-search"></i></a>
+          </li>
+        </ul>
+        <a href="#"  id="profile-icon"><i class="fa fa-user-o"></i></a>
+      </div>
+    </div>
+  </nav>
+  <!--LLama a los hijos-->
+  <div class="contenido-hijos">
+
+    <div class="container">
+      <div class="row">
+        <div class="dashboard col-9">
+          <router-outlet></router-outlet>
+        </div>
+        <div class="panel col-3 text-center">
+          <div class="trend">
+            <app-trend></app-trend>
+          </div>
+          <div class="mapa">
+            <app-mapa></app-mapa>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    
+  <!-- Footer -->
+  <footer class="footer py-3">
+    
+    <!-- Copyright -->
+    <div class="footer-copyright text-center">© 2018 Copyright:
+      <span> TriBarGo!</span>
+    </div>
+    <!-- Copyright -->
+    
+  </footer>
+  <!-- Footer -->
+</div>

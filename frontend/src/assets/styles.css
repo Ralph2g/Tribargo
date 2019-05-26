@@ -1,87 +1,196 @@
-.activado{
-    text-decoration: none !important;
-    background: #E03137 !important;
-    border-bottom: 4px solid yellow !important;
-}
-#content{
-    margin-top:30px;
-    border:1px solid #eee; 
-    background: white;
-    border-radius: 2px;
-    box-shadow: 0 2px 5px gray;
-    padding: 0;
-    overflow: hidden;
-}
-#header{
-    background: red;
-    margin: 0px;
-    color: white;
+/*Paleta de colores*/
 
-    line-height: 90px;
+:root{
+    --main-color : #e0860b;
+    --second-color: #facf57;
+    --third-color: #5c3b17;
+    --Titulo-letra: #ef7659;
+    --light-back: #fafafa;
 }
-#header h1{
-    display:block;
-    line-height: 50px;
-    font-weight: bold;
-    font-size: 30px;
-}
-#nav {
-    padding: 0;
-    margin: 0;
-    background: rgba(224, 49, 55, 0.67);
+/*Estilos Generales*/
+
+.body{
+    
 }
 
-#nav ul{
-    margin: 0;
-    list-style: none;
-    padding-left: 20px; 
+/*----------------------------------------------
++++++++++++++++   Navbar Page   +++++++++++++++
+----------------------------------------------*/
+.navbar{
+    background: #fafafa;
+    border-radius: 0 0 .5rem .5rem ;
+    border: var(--second-color) .3rem solid;
+    border-top: inherit;
+    border-left: inherit;
+    border-right: inherit;
 }
-
-#nav ul li{
-    float: left;
-    margin-right: 20px
-}
-#nav ul li a{
+.navbar .nav-image{
     display: block;
-    color: white;
-    height: 30px;
-    line-height: 29px;
-    padding-right: 10px;
-    padding-left: 10px;
-    transition: all 300ms;
+}
+.navbar .nav-image img {
+    max-width: 220px;
 }
 
-#nav ul li a:hover{
-    text-decoration: none;
-    background: red;
-}
-#main {
-    width: 100%
-}
-
-#main .jumbotron{
-    padding-left: 3rem;
-    margin-top: 2rem;
-}
-
-#formProducto{
-    margin-top: .8rem;
-}
-.producto_imagen{
-    max-height: 200px;
-    max-width: 100%;
-    display: block;
-    margin: 0px auto;
-}
-.img-relleno{
-    background: #ccc;
-    width: 100%;
-    height: 10rem
-}
-
-#footer{
+.navbar #secciones{
+    color: #5c3b17;
     margin-top: 1rem;
-    padding-left: 5rem;
-    border-top: 1px solid #eee;
-    color: gray;
+}
+
+.navbar #secciones .nav-link{
+    color: #5c3b17;
+    border-right: var(--main-color) .3rem solid;
+    min-width: 7.5rem;
+    text-align: center;
+    font-weight: 400;
+}
+
+.navbar #secciones #search{
+    font-size: 2rem;
+    color: var(--main-color);
+    margin: 0 2rem;
+}
+
+.navbar #secciones #profile-icon{
+    font-size: 2.5rem;
+    color: var(--main-color);
+    margin: auto 2rem auto auto
+
+}
+/*-----------------Fin navbar---------------*/
+
+
+/*----------------------------------------------
++++++++++++++   Preconfiguración   +++++++++++++++
+----------------------------------------------*/
+
+.contenido{
+    display: flex;
+    background-size: auto;
+    background-size: cover;
+    height: 100vh;
+    flex-direction: column;
+}
+.contenido-hijos{
+
+    display: flex;
+    flex: 1 1 auto;
+    align-items: center;
+    text-align: center;
+}
+/*----------------------------------------------
++++++++++++++   Dashboard page   +++++++++++++++
+----------------------------------------------*/
+
+.dashboard{
+    height: 35.5rem;
+    border: var(--main-color) .1rem solid;
+    background-color: var(--light-back);
+}
+
+.dashboard #bar-tag{
+    margin: .8rem 0 .8rem 0;
+    display: block;
+    border: var(--second-color) .1rem solid;
+}
+
+.dashboard .bar-header .bar-name{
+    text-align: left;
+    display: inline-block;
+    font-size: 2rem;
+    margin-right: 2rem;
+    flex: 0 0 14rem;
+    margin-bottom: 0 !important;
+}
+
+.dashboard .bar-header .bar-cost{
+    display: inline-block;
+    font-size: 2rem;
+    margin-right: 2rem;
+    flex: auto 0 auto;
+    text-align: right;
+    margin-bottom: 0 !important;
+}
+
+.dashboard .bar-header .bar-ranking{
+    display: inline-block;
+    font-size: 2rem;
+    margin-right: .2rem;
+    flex: 1 0 auto;
+    text-align: left;
+    margin-bottom: 0 !important;
+}
+
+.dashboard .cont-description .cont-image .bar-image{
+    margin: .5rem 1rem .5rem 0;
+    display: block;
+    margin-right: .2rem;
+    max-width: 100px;
+    max-height: 100px;
+}
+.dashboard .separador{
+    border-right: var(--second-color) .5rem dashed;
+    margin: 1rem .5rem 1rem .5rem;
+}
+
+
+
+
+/*-----------------fin Dashboard---------------*/
+
+/*----------------------------------------------
++++++++++++++++   Panel page   +++++++++++++++++
+----------------------------------------------*/
+
+.panel{
+    display: flex;
+    height: 35.5rem;
+    margin: 0 0 1rem 0;
+    border: var(--main-color) .1rem solid;
+    background-color: var(--light-back);
+    flex-direction: column;
+}
+/*___________Componente trend___________*/
+.trend{
+    flex: 0 0 50%;
+}
+.trend .container{
+    border: var(--second-color) .1rem solid;
+    height: 100%;
+    margin: .8rem 0 0 0
+}
+.trend .trend-top{
+    display: flex;
+}
+.trend .top-description{
+    display: flex;
+    flex-direction: column;
+}
+.trend .top-description p{
+    display: inline-block;
+    font-size: 1rem;
+    margin-bottom: 0;
+}
+.trend .top-image{
+    display: block;
+    max-width: 50px;
+    max-height: 50px;
+}
+
+/*___________Componente Mapa___________*/
+.mapa{
+    flex: 0 0 50%;
+}
+.mapa .container{
+    border: var(--second-color) .1rem solid;
+    height: 100%;
+    margin: -.8rem 0 .8rem 0
+}
+
+
+/*-----------------fin panel---------------*/
+/*------PAGE FOOTER-------*/
+
+footer{
+    background-color: var(--second-color);
+    font-size: 1rem;
 }
