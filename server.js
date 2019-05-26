@@ -14,7 +14,7 @@
 const app = require('./app/app.index'); // Importamos configuracion de la aplicacion
 const config = require('./app/config/config.properties'); // Importamos puerto y ruta de MongoDB
 const database = require('./app/config/config.database');
-const path = require('path');
+//const path = require('path');
 
 /**
  * @name:           database

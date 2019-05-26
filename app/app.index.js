@@ -15,7 +15,7 @@ const passport = require('passport'); // Es para que pueda iniciar sesion con Fa
 const morgan = require('morgan');
 const app = express(); // Agregamso express a nuestra aplicación
 const api = require('./routes/routes.api'); // Son las rutas para el CRUD de las colecciones
-const social = require('./passport/passport');
+const social = require('./passport/passport')(app, passport);
 
 /* ========= Importamos los middleware ========= */
 app.use(cors());
@@ -26,5 +26,6 @@ app.use(morgan('dev'));
 
 /** ========== Rutas ========= **/
 app.use('/api', api); // Usa los archivos de configuracion del CRUD de bebida
+
 
 module.exports = app;
