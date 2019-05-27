@@ -7,6 +7,7 @@ import { RegisterComponent } from './register/register.component';
 import { BarLoginComponent } from './login/bar-login.component';
 import { GustosUsuarioComponent } from './gustos-usuario/gustos-usuario.component';
 import { AuthComponent } from './auth.component';
+import { FacebookComponent } from './facebook/facebook.component';
 
 export const AuthRoutes: Route[] = [
   { 
@@ -14,6 +15,7 @@ export const AuthRoutes: Route[] = [
     component: AuthComponent, 
     children: [
       { path: 'login', component: LoginComponent},
+      { path: 'auth/facebook', component:FacebookComponent},
       { path: 'user-register', component: RegisterComponent },
       { path: 'bar-register', component: BarRegisterComponent },
       { path: 'bar-login', component: BarLoginComponent},
