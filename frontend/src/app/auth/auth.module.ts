@@ -10,13 +10,15 @@ import { LoginComponent } from './login/login.component';
 import { BarLoginComponent } from './login/bar-login.component';
 import { BarRegisterComponent } from './register/bar-register.component';
 import { GustosUsuarioComponent } from './gustos-usuario/gustos-usuario.component';
+import { GustosInicialesUsuarioComponent } from './gustos-iniciales-usuario/gustos-iniciales-usuario.component';
 @NgModule({
   declarations: [
                   RegisterComponent,
                   LoginComponent,
                   BarLoginComponent,
                   BarRegisterComponent,
-                  GustosUsuarioComponent
+                  GustosUsuarioComponent,
+                  GustosInicialesUsuarioComponent
                 ],
   imports: [
     CommonModule,

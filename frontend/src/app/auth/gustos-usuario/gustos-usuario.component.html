@@ -20,6 +20,11 @@
                         <p *ngFor="let mark of marks">
                           {{mark}} <button (click)= "insertMark(mark)"><b>+</b></button>
                         </p>
+                        
+                        <!-- <form (submit)="anMark(mark)">
+                          <input type="text" #mark>
+                          <button>Añadir nueva marca</button>
+                        </form> -->
                       </div>
 
                       <!--Seleccion y eliminacion-->

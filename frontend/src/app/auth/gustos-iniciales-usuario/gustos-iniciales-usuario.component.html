@@ -1,0 +1,79 @@
+<body class="bg-gra-02">
+  <div class="page-wrapper  p-t-130 p-b-100 font-poppins">
+      <div class="wrapper wrapper--w680">
+          <div class="card card-4">
+              <div class="card-body">
+                <div class="container-fluid py-2 bg-white">
+                  <img src="assets/styleSecond/img/beer.png"  class="rounded col-4 offset-4 text-center" width="25%" height="25%"> 
+                </div>
+                <div class="container py-2">
+                  <p class="descrp text-center">¿Qu&eacute; es lo que me gusta?</p>
+                  <br>
+                  <p class="lead">Indicanos cu&aacute;les son tus preferencias</p>
+                </div>
+
+                <div class="container py-2 page-wrapper font-poppins bg-white">
+                  <div class="row">
+                    <div class="col-sm-12 col-md-6 col-lg-6">
+                      <h3 class="text-danger">Cerveza</h3>
+                      <!--Agregar marcas-->
+                      <p *ngFor="let mark of marks">
+                        {{mark}} <button (click)= "insertMark(mark)"><b>+</b></button>
+                      </p>
+                      
+                      <!--Seleccion y eliminacion-->
+                      <div class="col-sm-12 col-md-6 col-lg-6">
+                        <h4 class="text-primary">Seleccionaste</h4>
+                        <p *ngFor="let select1 of selection1">
+                          {{select1}} <button (click)= "deleteMark(select1)"><b>x</b></button>
+                        </p>
+                        
+                      </div>
+                    </div> 
+                    
+                    <div>
+                      <!-- Generar cadena de salida-->
+                      <h4 class="text-warning">Cadena de salida</h4> 
+                      
+                      <button (click)= "generaSal1()"><b>Generar</b></button>
+                      
+                      <p *ngFor="let sals1 of salida1">
+                        {{ sals1 }}
+                      </p>
+                    </div>
+                    
+                    <div class="row">
+                      <div class="col-sm-12 col-md-6 col-lg-6">
+                        <h3 class="text-danger">M&uacute;sica</h3>
+                        <!--Agregar marcas-->
+                        <p *ngFor="let genre of genres">
+                          {{genre}} <button (click)= "insertGenre(genre)"><b>+</b></button>
+                        </p>
+                      </div>
+                      
+                      <!--Seleccion y eliminacion-->
+                      <div class="col-sm-12 col-md-6 col-lg-6">
+                        <h4 class="text-primary">Seleccionaste</h4>
+                        <p *ngFor="let select2 of selection2">
+                          {{select2}} <button (click)= "deleteGenre(select2)"><b>x</b></button>
+                        </p>
+                      </div>   
+                    </div>
+                    <!-- Generar cadena de salida-->
+                    <div>
+                      <h4 class="text-warning">Cadena de salida</h4> 
+                      
+                      <button (click)= "generaSal2()"><b>Generar</b></button>
+                      
+                      <p *ngFor="let sals2 of salida2">
+                        {{ sals2 }}
+                      </p>
+                    </div>
+                    <button (click)= "enviarDatos()"><b>Siguirnte</b></button>
+                  </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </body>

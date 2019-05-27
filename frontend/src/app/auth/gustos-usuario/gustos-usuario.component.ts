@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GustosUsuarioComponent implements OnInit {
  
-  marks: string [] = ['XX','Carta Blanca','Indio', 'Corona', 'Heineken'];
+  marks: string [] = ['Cerveza','Cognac','Tequila', 'Whiskey', 'Ron', 'Brandy', 'Vodka'];
   genres: string [] = ['Rock','Reggaeton','Pop', 'Banda', 'Bachata','Ranchera'];
   offers: string [] = ['2x1','Barra libre','Mujeres no pagan'];
   snacks: string [] = ['Totopos','Nachos','Papas','Pizza','Chicharrones'];
@@ -76,6 +76,21 @@ export class GustosUsuarioComponent implements OnInit {
     }
   }
 
+  /*anMark(mark){
+    let repetir = 0;
+    for(let i=0; i< this.selection1.length; i++)
+    {
+      if(mark.value == this.selection1[i])
+      {
+        repetir = 1;
+      }     
+    }
+    if(repetir == 0 )
+    {
+      this.selection1.push(mark.value);
+    }
+  }  */
+  
   deleteMark(select1){
     for(let i=0; i< this.selection1.length; i++)
     {
