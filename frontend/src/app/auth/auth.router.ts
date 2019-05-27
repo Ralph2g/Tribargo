@@ -7,6 +7,7 @@ import { RegisterComponent } from './register/register.component';
 import { BarLoginComponent } from './login/bar-login.component';
 import { GustosUsuarioComponent } from './gustos-usuario/gustos-usuario.component';
 import { AuthComponent } from './auth.component';
+import { GustosInicialesUsuarioComponent } from './gustos-iniciales-usuario/gustos-iniciales-usuario.component';
 
 export const AuthRoutes: Route[] = [
   { 
@@ -17,7 +18,8 @@ export const AuthRoutes: Route[] = [
       { path: 'user-register', component: RegisterComponent },
       { path: 'bar-register', component: BarRegisterComponent },
       { path: 'bar-login', component: BarLoginComponent},
-      { path: 'gustos-usuario', component: GustosUsuarioComponent}
+      { path: 'gustos-usuario', component: GustosUsuarioComponent},
+      { path: 'gustos-usuario-inicial', component: GustosInicialesUsuarioComponent}
   ]
 }  
 ];
