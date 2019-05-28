@@ -15,6 +15,7 @@ export class EventosComponent implements OnInit {
 
     this.sugerencias = [
       {
+        id:123123,
         nombre:'Mr. Duck',
         productos:['tarro','misil','snacks'],
         musica:['Bachata','Rock','regueton'],
@@ -25,6 +26,7 @@ export class EventosComponent implements OnInit {
         imagen:"imagen chida",
       },
       {
+        id:4655464,
         nombre:'Madero',
         productos:['tarro','misil','snacks'],
         musica:['Bachata','Rock','regueton'],
@@ -34,6 +36,7 @@ export class EventosComponent implements OnInit {
         costo:200
       },
       {
+        id:987668,
         nombre:'Nock-Down',
         puntuacion: 4,
         costo:200,

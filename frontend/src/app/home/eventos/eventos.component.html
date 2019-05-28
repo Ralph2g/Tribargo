@@ -1,7 +1,7 @@
 
 <div class="col-12" id="bar-tag" *ngFor="let sugerencia of sugerencias">
-    <div class="container">
-      <div class="row">
+  <div class="container" [routerLink]="[ '/sugerencia',sugerencia.id]">
+    <div class="row">
 
         <div class="bar-header col-12 d-flex">
           <p class="bar-name">
@@ -15,7 +15,7 @@
           </p>
         </div>
         <div class="cont-description d-flex">
-
+          
           <div class="cont-image">
             <img *ngIf="sugerencia.imagen" src="../../../assets/images/no-image.jpg" class="bar-image"alt="Imagen-bar">
             <img *ngIf="!sugerencia.imagen" src="../../../assets/images/no-image.jpg" class="bar-image"alt="Imagen-bar">
@@ -35,7 +35,6 @@
             </p>
             <p>
               {{sugerencia.ubicacion}}
-
             </p>
           </div>
         </div>

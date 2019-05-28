@@ -18,6 +18,7 @@ import { AuthModule } from './auth/auth.module';
 import { FormsModule } from '@angular/forms';
 import { TrendComponent } from './home/trend/trend.component';
 import { MapaComponent } from './home/mapa/mapa.component';
+import { AgmCoreModule } from '@agm/core';
 
 
 @NgModule({
@@ -38,6 +39,9 @@ import { MapaComponent } from './home/mapa/mapa.component';
     AppRoutingModule,
     HomeModule,
     AuthModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyDHIYS8Q_XGg1K99dNSkGK7eljU4oeZexE'
+    })
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]

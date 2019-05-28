@@ -18,7 +18,7 @@ export const HomeRoutes: Route[] = [
       { path: '', component: EventosComponent },
       { path: 'musica', component: MusicaComponent },
       { path: 'promociones', component: PromocionesComponent },
-      { path: 'sugerencia', component: SugerenciaComponent },
+      { path: 'sugerencia/:id', component: SugerenciaComponent },
       
   ]},
     
