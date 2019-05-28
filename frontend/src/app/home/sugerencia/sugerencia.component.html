@@ -1,8 +1,75 @@
-<p>
-  sugerencia works! <br>
+<div class="container py-3">
+  <div class="row">
+      <div class="rating col-4">
+        Score: {{score}}
+      </div>
 
-  Sugerencia del bar {{id}}
+      <div class="name col-5 py-2">
+        <h3><u>{{name}}</u></h3>
+      </div>
 
-</p>
+      <div class="price col-3">
+        Precio: {{price}}
+      </div>
+    <div class="files col-4 d-flex flex-col">
+      <div class="files-image">
+        <img src="../../../assets/images/beer.png" alt="imagen-bar">
+      </div>
+      <h5>Galeria</h5>
+      <div class="map">
+        <agm-map [latitude]="latitude" [longitude]="longitude" [zoom]="20">
+          <agm-marker 
+                  [latitude]="latitude" 
+                  [longitude]="longitude" 
+                  [opacity]="10"
+                  [iconUrl]="iconMap.iconUrl"
+                  >
+                  <agm-info-window [disableAutoPan]="true">
+                <strong>{{name}}</strong><br>
+                {{location}} 
+              </agm-info-window>
+            </agm-marker>
+          </agm-map>
+        </div>
+      </div>
+      
+      <div class="details col-8 container">
+        <div class="row">
+            <div class="col-12">
+              <h5>Bebidas del bar:</h5>
+            </div>
+            <div class="col-12 d-flex">
+              <div class="details-img">
+                <img src="../../../assets/images/beer.png" alt="imagen-bar">
+              </div>
+
+            </div>
+            
+            <div class="col-12">
+              <h5>Snacks del bar:</h5>
+            </div>
+            <div class="col-12">
+              <div class="details-img">
+                <img src="../../../assets/images/beer.png" alt="imagen-bar">
+              </div>
+            </div>
+
+            <div class="col-5">
+              <h3>tags</h3>
+            </div>
+            <span class="line col-1"></span>
+            <div class="col-6">
+              {{description}}
+            </div>
+            <div class="col-12 mt-4">
+              {{location}}
+
+            </div>
+              
+        </div>
+        
+    </div>
+  </div>
+</div>
 
 
