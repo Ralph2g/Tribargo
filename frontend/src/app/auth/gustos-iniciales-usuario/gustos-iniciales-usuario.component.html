@@ -13,33 +13,55 @@
                 </div>
 
                 <div class="container py-2 page-wrapper font-poppins bg-white">
-                  <div class="row">
-                    <div class="col-sm-12 col-md-6 col-lg-6">
-                      <h3 class="text-danger">Cerveza</h3>
-                      <!--Agregar marcas-->
-                      <p *ngFor="let mark of marks">
-                        {{mark}} <button (click)= "insertMark(mark)"><b>+</b></button>
-                      </p>
-                      
+                    <div class="row">
+                        <div class="col-sm-12 col-md-12 col-lg-12">
+                            <form>
+                                <h3 class="text-danger">Presupuesto</h3>
+                              <input name="presupuesto" type="text" [(ngModel)]="presupuesto">
+                              <br><br>
+                            </form>
+                            Tu presupuesto es de: {{presupuesto}}
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-12 col-md-6 col-lg-6">
+                          <form>
+                              <h3 class="text-danger">Edad</h3>
+                            <input name="edad" type="text" [(ngModel)]="edad">
+                            <br><br>
+                            Tu edad es de: {{edad}}
+                          </form>
+                        </div>
+
+                        <div class="col-sm-12 col-md-6 col-lg-6">
+                            <h3 class="text-danger">Sexo</h3>
+                            <form>
+                            <select name="sexo" [(ngModel)]="sexo">
+                                <option value="masculino">Masculino</option>
+                                <option value="femenino">Femenino</option>
+                            </select> 
+                            <br><br>
+                            Tu sexo es: {{sexo}}
+                          </form>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-sm-12 col-md-6 col-lg-6">
+                        <h3 class="text-danger">Cerveza</h3>
+                        <!--Agregar marcas-->
+                        <p *ngFor="let mark of marks">
+                          {{mark}} <button (click)= "insertMark(mark)"><b>+</b></button>
+                        </p>
+                      </div>   
                       <!--Seleccion y eliminacion-->
                       <div class="col-sm-12 col-md-6 col-lg-6">
                         <h4 class="text-primary">Seleccionaste</h4>
                         <p *ngFor="let select1 of selection1">
                           {{select1}} <button (click)= "deleteMark(select1)"><b>x</b></button>
-                        </p>
-                        
+                        </p>    
                       </div>
-                    </div> 
-                    
-                    <div>
-                      <!-- Generar cadena de salida-->
-                      <h4 class="text-warning">Cadena de salida</h4> 
-                      
-                      <button (click)= "generaSal1()"><b>Generar</b></button>
-                      
-                      <p *ngFor="let sals1 of salida1">
-                        {{ sals1 }}
-                      </p>
                     </div>
                     
                     <div class="row">
@@ -59,21 +81,73 @@
                         </p>
                       </div>   
                     </div>
-                    <!-- Generar cadena de salida-->
-                    <div>
-                      <h4 class="text-warning">Cadena de salida</h4> 
-                      
-                      <button (click)= "generaSal2()"><b>Generar</b></button>
-                      
-                      <p *ngFor="let sals2 of salida2">
-                        {{ sals2 }}
-                      </p>
+
+                    <div class="row">
+                      <!--Agregar ofertas-->
+                        <div class="col-sm-12 col-md-6 col-lg-6">
+                            <h3 class="text-danger">Ofertas</h3>
+                            <p *ngFor="let offert of offerts">
+                              {{offert}} <button (click)= "insertOffert(offert)"><b>+</b></button>
+                            </p>
+                        </div>
+
+                        <!--Seleccion y eliminacion-->
+                        <div class="col-sm-12 col-md-6 col-lg-6">
+                          <h4 class="text-primary">Seleccionaste</h4>
+                          <p *ngFor="let select3 of selection3">
+                            {{select3}} <button (click)= "deleteOffert(select3)"><b>x</b></button>
+                          </p>
+                        </div>   
                     </div>
-                    <button (click)= "enviarDatos()"><b>Siguirnte</b></button>
+
+                    <div class="row">  
+                      <div class="col-sm-12 col-md-12 col-lg-12">
+                          <h3 class="text-danger">Bares</h3>
+                          <form>
+                            <select name="bar" [(ngModel)]="bar" >
+                              <option value="Brazilian Terraza & Grill">Brazilian Terraza & Grill</option>
+                              <option value="Los Vegetarianos">Los Vegetarianos</option>
+                              <option value="Made in Brazil">Made in Brazil</option>
+                              <option value="Hilaria: Gastrobar y Jardín Cervecero">Hilaria: Gastrobar y Jardín Cervecero</option>
+                              <option value="Bechamel">Bechamel</option>
+                              <option value="Restaurante La Terraza">Restaurante La Terraza</option>
+                              <option value="Terraza Madera">Terraza Madera</option>
+                              <option value="Salon Corona Madero">Salon Corona Gante</option>
+                              <option value="Salon Corona Gante">Salon Corona Gante</option>
+                              <option value="Mr.Duck">Mr.Duck</option>
+                              <option value="La Nativa">La Nativa</option>
+                              <option value="Menage Mexico">Menage Mexico</option>
+                              <option value="Rock Son Madero">Rock Son Madero</option>
+                              <option value="El Hoyo de Frank">El Hoyo de Frank</option>
+                              <option value="Bar La Gioconda">Bar La Gioconda</option>
+                              <option value="El Bajon">El Bajon</option>
+                              <option value="Don Batiz Centro">Don Batiz Centro</option>
+                              <option value="La Casa de la Guera Rodriguez">La Casa de la Guera Rodriguez</option>
+                              <option value="Terraza 5a Bar">Terraza 5a Bar</option>
+                              <option value="Dobermann Centro">Dobermann Centro</option>
+                            </select>
+                            <br><br>
+                            El bar que elegiste fue: {{bar}}
+                          </form> 
+                      </div>  
+                    </div>
+                    <!-- Generar cadena de salida -->
+                    <div class="row">
+                      <div class="col-sm-12 col-md-12 col-lg-12">
+                        <h4 class="text-warning">Cadena de salida</h4> 
+                        <button (click)= "generaCadenaFinal()"><b>Generar</b></button>
+                        
+                      <!-- Verificar la cadena que genera, imprime lo que vamos a mandar para el machine learning-->  
+                      <p *ngFor="let cad1 of cadenafinal">
+                          {{ cad1 }}
+                      </p>
+
+                    </div>
                   </div>
+                    <!-- <button (click)= "enviarDatos()"><b>Enviar Datos</b></button>-->
                   </div>
                 </div>
-              </div>
             </div>
-          </div>
-        </body>
+        </div>
+    </div>
+</body>
