@@ -12,7 +12,6 @@
 
 const Bebida = require('../models/model.bebida');
 const ReponseHTTP = require('../config/config.http_codes');
-
 /**
  * @name:           getBebidas
  * @param:          req:    Objeto HTTP request.
@@ -91,6 +90,7 @@ function updateBebida(req, res) {
                 info_update */
     Bebida.findByIdAndUpdate(bebidaID, info_update, { new: true }, (err, bebidaUpdated) => {
         if (err) res.status(ReponseHTTP.server_error_codes['ISE']).send({ message: `Error al actualizar el producto: ${err}` });
+
         res.status(ReponseHTTP.accept_codes['OK']).send({ bebida: bebidaUpdated });
     });
 }

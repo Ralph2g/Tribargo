@@ -21,6 +21,7 @@ const ResponseHTTP = require('../config/config.http_codes');
  */
 const BebidaCtrl = require('../controllers/controller.bebida');
 const Users = require('../controllers/controller.user');
+const BarCtrl =require('../controllers/controller.bar');
 
 /** |=========== CRUD en la coleccion BEBIDA ===========|
  * @description:    Utilizando la api dada por ROUTER de 
@@ -69,6 +70,17 @@ api.use(function(req, res, next) {
 api.post('/mysession', function(req, res) {
     res.send(req.decoded);
 });
+
+
+/** |=========== CRUD en la coleccion Bar ===========|
+ * @description:    Utilizando la api dada por ROUTER de 
+ *                  express, utilazamos las funciones para
+ *                  poder crear el CRUD de la colección 
+ *                  'Bar' en la base de datos.
+ */
+api.get('/bebida', BebidaCtrl.getBebidas);
+
+api.post('/bar', BarCtrl.addBar);//Crea un bar
 
 //api.use(Users.verifyToken); // Es el middleware para poder iniciar sesion
 //api.get('/mysession', Users.startSession); // Iniciar sesion con el web token

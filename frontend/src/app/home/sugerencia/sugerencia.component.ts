@@ -16,7 +16,7 @@ export class SugerenciaComponent implements OnInit {
   public price:number;//precio
   public image:File;//imagen
   public drinks:Array<string>;//array de bebidas
-  public snaks:Array<string>;//array de SNACKS
+  public snacks:Array<string>;//array de SNACKS
   public music:Array<string>;//array de MUSICA
   public description:string;//descripcion larga del bar
   public promos:Array<string>;//array de PROMOS
@@ -35,6 +35,7 @@ export class SugerenciaComponent implements OnInit {
     this._route.params.forEach((params: Params) =>{
     let id =params['id'];  
     this.id = id;
+    console.log(this.id)
     
     });
     this.name = 'Terraza-Madero';
@@ -44,7 +45,7 @@ export class SugerenciaComponent implements OnInit {
     this.price = 150;
     this.image = null;
     this.drinks = ['Heineken','XX','victoria'];
-    this.snaks = ['Alitas','Hamburguesas', 'Papas'];
+    this.snacks = ['Alitas','Hamburguesas', 'Papas'];
     this.music = ['Regueton', 'Banda','Salsa', 'ska'];
     this.description = 'Somos el bar más popular para pasar la tarde con tus amigos, hay de todo y a buen precio';
     this.promos = ['2x1','No-cover'];

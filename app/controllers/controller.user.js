@@ -35,6 +35,7 @@ function createUser(req, res, next) {
         fecha_nacimiento: req.body.fecha_nacimiento,
         presupuesto: req.body.presupuesto,
         correo: req.body.correo,
+        
         /**
          * @summary:    No se le va a pasar la contraseña como texto plano,
          *              para esto es necesario cifrarla utilizando bcrypt.
