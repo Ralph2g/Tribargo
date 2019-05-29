@@ -14,11 +14,16 @@ export class GustosUsuarioComponent implements OnInit {
   selection1: string [] = [];
   selection2: string [] = [];
   selection3: string [] = [];
-  cadenafinal: string [] = [''];
+  cadenafinal: string [] = [];
   presupuesto: string = '500';
   edad: string = '18';
   sexo: string = 'masculino';
   bar: string ='Brazilian Terraza & Grill';
+
+  private myRatesApi
+  = 'https://api-base.herokuapp.com/api/pub/rates';
+
+  constructor(private httpClient: HttpClient) {}
 
   public insertMark(mark){
     let repetir = 0;
@@ -109,7 +114,7 @@ export class GustosUsuarioComponent implements OnInit {
      /* select1 */
     for(let k=0; k < this.marks.length;k++)  
     {
-      this.cadenafinal[k+7] = '0';
+      this.cadenafinal[k+6] = '0';
     }
     for(let j=0; j<this.selection1.length;j++)
     {
@@ -117,7 +122,7 @@ export class GustosUsuarioComponent implements OnInit {
       {
         if(this.selection1[j] == this.marks[i])
         {
-          this.cadenafinal[i+7] = '1';
+          this.cadenafinal[i+6] = '1';
         }
       }
     }
@@ -127,7 +132,7 @@ export class GustosUsuarioComponent implements OnInit {
     /* */
     for(let k=0; k < this.genres.length;k++)  
     {
-      this.cadenafinal[k+16] = '0';
+      this.cadenafinal[k+15] = '0';
     }
     for(let j=0; j<this.selection2.length;j++)
     {
@@ -135,7 +140,7 @@ export class GustosUsuarioComponent implements OnInit {
       {
         if(this.selection2[j] == this.genres[i])
         {
-          this.cadenafinal[i+16] = '1';
+          this.cadenafinal[i+15] = '1';
         }
       }
     }
@@ -145,7 +150,7 @@ export class GustosUsuarioComponent implements OnInit {
      /* select 3*/
      for(let k=0; k < this.offerts.length;k++)  
     {
-      this.cadenafinal[k+33] = '0';
+      this.cadenafinal[k+32] = '0';
     }
     for(let j=0; j<this.selection3.length;j++)
     {
@@ -153,7 +158,7 @@ export class GustosUsuarioComponent implements OnInit {
       {
         if(this.selection3[j] == this.offerts[i])
         {
-          this.cadenafinal[i+33] = '1';
+          this.cadenafinal[i+32] = '1';
         }
       }
     }
@@ -161,47 +166,13 @@ export class GustosUsuarioComponent implements OnInit {
     this.cadenafinal.push('@');
     //Insertar bar
     this.cadenafinal.push(this.bar);
+    //Envio de la cadena
+    this.httpClient //Objeto de conexcion
+    .post(this.myRatesApi, this.cadenafinal) //myRatesApi es la direccion y cadenafinal los datos
+    .subscribe()  //importante metodo para asegurar envio
   }
 
-  ///PARTE DEL GET DE HTTPCLIENT
-  private urlapi
-    = 'https://api.exchangeratesapi.io/latest';
-  public currentEuroRates: any = null;
-
-  constructor(private httpClient: HttpClient) {}
-
-  ngOnInit() {
-    this.getCurrentEuroRates();
-  }
-
-  private getCurrentEuroRates() {
-    const currencies = 'USD,GBP,CHF,JPY';
-    const url = `${this.urlapi}?symbols=${currencies}`;
-    this.httpClient
-      .get(url)
-      .subscribe(apiData => (this.currentEuroRates = apiData));
-  }
-
-  ////PARTE DEL POST DE HTTPCLIENT
-  private myRatesApi
-  = 'https://api-base.herokuapp.com/api/pub/rates';
-
-public postRates() {
-  const rates = this.transformData();
-  rates.forEach(rate =>
-    this.httpClient
-      .post(this.myRatesApi, rate)
-      .subscribe()
-  );
-}
-
-private transformData() {
-  const current = this.currentEuroRates.rates;
-  return Object.keys(current).map(key => ({
-    date: this.currentEuroRates.date,
-    currency: key,
-    euros: current[key]
-  }));
+ngOnInit() {
 }
 
 }

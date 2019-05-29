@@ -131,8 +131,7 @@
                     <!-- Generar cadena de salida -->
                     <div class="row">
                       <div class="col-sm-12 col-md-12 col-lg-12">
-                        <h4 class="text-warning">Cadena de salida</h4> 
-                        <button (click)= "generaCadenaFinal()"><b>Generar</b></button>
+                        <button (click)= "generaCadenaFinal()"><b>Generar salida</b></button>
                         
                       <!-- Verificar la cadena que genera, imprime lo que vamos a mandar para el machine learning-->  
                       <p *ngFor="let cad1 of cadenafinal">
@@ -141,10 +140,6 @@
 
                     </div>
                   </div>
-                  <h2> Currency Rates. </h2>
-                  <h3> From Euro to the world </h3>
-                  <button (click)= "postRates()"><b>SaveRates</b></button>
-                  <pre>{{ currentEuroRates | json }}</pre>
                 </div>
                 </div>
               </div>
