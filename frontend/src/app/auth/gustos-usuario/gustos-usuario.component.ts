@@ -1,3 +1,4 @@
+import { HttpClient} from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -162,11 +163,45 @@ export class GustosUsuarioComponent implements OnInit {
     this.cadenafinal.push(this.bar);
   }
 
+  ///PARTE DEL GET DE HTTPCLIENT
+  private urlapi
+    = 'https://api.exchangeratesapi.io/latest';
+  public currentEuroRates: any = null;
+
+  constructor(private httpClient: HttpClient) {}
+
   ngOnInit() {
+    this.getCurrentEuroRates();
   }
 
-  enviarDatos(){
-    
+  private getCurrentEuroRates() {
+    const currencies = 'USD,GBP,CHF,JPY';
+    const url = `${this.urlapi}?symbols=${currencies}`;
+    this.httpClient
+      .get(url)
+      .subscribe(apiData => (this.currentEuroRates = apiData));
   }
+
+  ////PARTE DEL POST DE HTTPCLIENT
+  private myRatesApi
+  = 'https://api-base.herokuapp.com/api/pub/rates';
+
+public postRates() {
+  const rates = this.transformData();
+  rates.forEach(rate =>
+    this.httpClient
+      .post(this.myRatesApi, rate)
+      .subscribe()
+  );
+}
+
+private transformData() {
+  const current = this.currentEuroRates.rates;
+  return Object.keys(current).map(key => ({
+    date: this.currentEuroRates.date,
+    currency: key,
+    euros: current[key]
+  }));
+}
 
 }

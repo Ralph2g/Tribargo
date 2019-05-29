@@ -141,9 +141,22 @@
 
                     </div>
                   </div>
-                    <!-- <button (click)= "enviarDatos()"><b>Enviar Datos</b></button>-->
-                  </div>
+                  <h2> Currency Rates. </h2>
+                  <h3> From Euro to the world </h3>
+                  <button (click)= "postRates()"><b>SaveRates</b></button>
+                  <pre>{{ currentEuroRates | json }}</pre>
+                </div>
                 </div>
               </div>
             </div>
+            <!-- Footer -->
+  <footer class="footer py-3">
+    
+    <!-- Copyright -->
+    <div class="footer-copyright text-center">© 2019 Copyright:
+      <span> TriBarGo!</span>
+    </div>
+    <!-- Copyright -->
+    
+  </footer>
       
