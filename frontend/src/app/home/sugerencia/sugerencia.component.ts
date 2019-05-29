@@ -35,7 +35,7 @@ export class SugerenciaComponent implements OnInit {
     this._route.params.forEach((params: Params) =>{
     let id =params['id'];  
     this.id = id;
-      
+    
     });
     this.name = 'Terraza-Madero';
     this.latitude = 19.433869;

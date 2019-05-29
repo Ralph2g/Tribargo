@@ -5,4 +5,4 @@ export const NoPageRoutes:Route[] = [
 
     { path:'**', component: NoPageComponent }
 
-]
+];

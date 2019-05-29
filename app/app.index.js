@@ -13,7 +13,7 @@ const bodyParser = require('body-parser'); // Importamos Body-parser
 const cors = require('cors'); // Importamos cors
 const passport = require('passport'); // Es para que pueda iniciar sesion con Facebook, Twitter y Google
 const morgan = require('morgan');
-const app = express(); // Agregamso express a nuestra aplicación
+const app = express(); // Ag  regamso express a nuestra aplicación
 const api = require('./routes/routes.api'); // Son las rutas para el CRUD de las colecciones
 const social = require('./passport/passport')(app, passport);
 
