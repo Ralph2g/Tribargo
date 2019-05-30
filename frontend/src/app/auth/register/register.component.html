@@ -1,6 +1,6 @@
 <div class="limiter">
 		<div class="container-login100">
-			<div class="wrap-login100">
+			<div class="wrap-login100 text-center">
 				
 				<form #frmRegister="ngForm" (ngSubmit)="onRegister(frmRegister)" class="login100-form validate-form">
 					<img src="assets/images/beer.png" class="text-center" width="25%" height="25%">
@@ -25,15 +25,11 @@
 						<input type='date' id='fechaNace' name="fecha_nacimiento" class="input100" max="2001-12-31" placeholder="" ngModel required>
 					</div>
 
-
-					<div class="btn-group btn-group-toggle" data-toggle="buttons">
-					  <label class="btn btn-outline-warning	 active">
-					    <input type="radio" name="sexo" id="option1" value="Masculino" autocomplete="off" ngModel checked> Masculino
-					  </label>
-					  <label class="btn btn-outline-warning">
-					    <input type="radio" name="sexo" id="option2" value="Femenino"  autocomplete="off" ngModel> Femenino
-					  </label>
-					</div>
+					<div class="text-center descrp">sexo</div>
+					<select class="btn-group btn-group-toggle"  data-toggle="buttons" name="sexo" ngModel >
+					    <option id="option1" value="masculino" selected > masculino</option>
+					    <option  id="option2" value="femenino"  autocomplete="off">femenino</option>
+					</select>
 
 					<br>
 					<br>
