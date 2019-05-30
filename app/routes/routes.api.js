@@ -55,6 +55,7 @@ api.post('/login', Users.loginUser);
 api.post('/bar', BarCtrl.addBar);//Crea un bar
 api.get('/bar', BarCtrl.getBars);//recibe todos los bares
 api.get('/bar/:barID', BarCtrl.getBar);//obtioene el bar por la id  
+api.put('/bar/:barID', BarCtrl.updateBar); //actualiza el bar
 api.delete('/bar/:barID', BarCtrl.deleteBar);//Borra bar por la id
 
 //Json Web Token
