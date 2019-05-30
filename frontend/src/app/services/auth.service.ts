@@ -49,9 +49,7 @@ export class AuthService {
   }// cierra saveToken
 
   public getToken():string{
-    if( this.token ){
       this.token = localStorage.getItem('ACCESS_TOKEN');
-    }
     return this.token;
   }
 

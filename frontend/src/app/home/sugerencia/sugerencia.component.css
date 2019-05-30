@@ -1,6 +1,6 @@
 agm-map {
     margin-top: 1rem;
-    height: 85%;
+    height: 100%;
     width: 100%;
 }
 .rating{
@@ -24,8 +24,8 @@ agm-map {
 
 .files .files-image{
     display: flex;
-    flex: 0 1 60%;
-    max-width: 100;
+    flex: 0 0 200px;
+    max-width: 200px;
 }
 .files .files-image img{
     max-height: 100%;

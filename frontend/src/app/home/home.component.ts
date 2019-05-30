@@ -17,11 +17,11 @@ export class HomeComponent implements OnInit {
     public _authService:AuthService,
     public _router:Router
     ){
+
       this.getIdentity();
     }
     
-      ngOnInit(){
-    
+    ngOnInit(){
     }
 
   //Revisa si tenemos un token de lo contrario nos manda al login
