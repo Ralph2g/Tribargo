@@ -137,13 +137,38 @@ function getBar(req, res) {
     });
 }
 
+function updateBar(req, res) {
+    let barID = req.params.barID;
+    let info_update = req.body; // Objeto con campos a actualizar
 
+    /* @param:  barID
+                info_update */
+    Bar.findByIdAndUpdate(barID, info_update, { new: true }, (err, barUpdated) => {
+        if (err) res.status(ReponseHTTP.server_error_codes['ISE']).send({ message: `Error al actualizar el producto: ${err}` });
+
+        res.status(ReponseHTTP.accept_codes['OK']).send({ bar: barUpdated });
+    });
+}
+
+function deleteBar(req, res) {
+    let barID = req.params.barID;
+
+    Bar.findById(barID, (err, bar) => {
+        if (err) res.status(ReponseHTTP.server_error_codes['ISE']).send({ message: `Error al borrar el producto: ${err}` });
+
+        bar.remove(err => {
+            if (err) res.status(ReponseHTTP.server_error_codes['ISE']).send({ message: `Error al borrar el producto: ${err}` });
+            res.status(ReponseHTTP.accept_codes['OK']).send({ message: 'El producto ha sido eliminado' });
+        });
+    });
+}
 
 module.exports = {
     addBar,
     getBars,
     getBar,
-
+    updateBar,
+    deleteBar,
 }
 
 
