@@ -36,9 +36,9 @@ const BarSchema = new Schema({
     }, */
     snacks: {
         type:[String],
-        enum:['alitas','Hamburguesas','Papas','Boneless',
+       /*  enum:['alitas','Hamburguesas','Papas','Boneless',
         'pizza','deditos de queso','Hot-Dogs'
-    ]
+    ] */
     
     },
     /* {
