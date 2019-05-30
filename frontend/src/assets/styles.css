@@ -11,7 +11,7 @@
 /*Estilos Generales*/
 
 .body{
-  background: #fff;
+
 
 
 }
@@ -204,12 +204,10 @@ footer{
 
 
 .back{
-  background: #6a7dfe;
-  background: -webkit-linear-gradient(left, #FDA185, #FFC107);
-  background: -o-linear-gradient(left, #FDA185, #FFC107);
-  background: -moz-linear-gradient(left, #FDA185, #FFC107);
-  background: linear-gradient(left, #FDA185, #FFC107);
+
+  background: #f0f0f0;
   height: auto;
+
 }
 
 .back-w{

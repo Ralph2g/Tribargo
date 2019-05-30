@@ -42,6 +42,7 @@ border-radius: 2rem;
     width: auto;
 
     border-radius: 50%;
+
 }
 
 .files .map {
@@ -51,7 +52,12 @@ border-radius: 2rem;
 /*imagen de bebidas*/
 .details .details-img img{
     display: block;
-    max-height: 8rem;
+    width: 7rem;
+    height: 7rem;
+    object-fit: cover;
+      object-position: center center;
+      border-radius: 2rem 0 2rem 0;
+
 }
 
 .details .line{
@@ -60,14 +66,14 @@ border-radius: 2rem;
 }
 
 .sub{
-  -webkit-transition: all 0.4s;
-  -o-transition: all 0.4s;
-  -moz-transition: all 0.4s;
-  transition: all 0.4s;
-  background: #6a7dfe;
-  background: -webkit-linear-gradient(left, #FDA185, #FFC107);
-  background: -o-linear-gradient(left, #FDA185, #FFC107);
-  background: -moz-linear-gradient(left, #FDA185, #FFC107);
-  background: linear-gradient(left, #FDA185, #FFC107);
 
+  font-family: 'Luckiest Guy', cursive;
+  text-transform: uppercase;
+  color: #fff;
+  background: #FACF57;
+  border-radius: 1rem 0 1rem 0;
+
+}
+.col-12{
+  margin-bottom: 2rem;
 }
