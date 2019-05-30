@@ -45,6 +45,21 @@ api.delete('/bebida/:bebidaID', BebidaCtrl.deleteBebida);
 api.post('/register', Users.createUser);
 api.post('/login', Users.loginUser);
 
+/** |=========== CRUD en la coleccion Bar ===========|
+ * @description:    Utilizando la api dada por ROUTER de 
+ *                  express, utilazamos las funciones para
+ *                  poder crear el CRUD de la colección 
+ *                  'Bar' en la base de datos.
+ */
+
+api.post('/bar', BarCtrl.addBar);//Crea un bar
+api.get('/bar', BarCtrl.getBars);//recibe todos los bares
+api.get('/bar/:barID', BarCtrl.getBar);//obtioene el bar por la id  
+api.put('/bar/:barID', BarCtrl.updateBar); //actualiza el bar
+api.delete('/bar/:barID', BarCtrl.deleteBar);//Borra bar por la id
+
+//Json Web Token
+
 api.use(function(req, res, next) {
     var token = req.body.token || req.body.query || req.headers['x-access-token'];
     if (token) { //  Verificamos el Token
@@ -71,16 +86,6 @@ api.post('/mysession', function(req, res) {
     res.send(req.decoded);
 });
 
-
-/** |=========== CRUD en la coleccion Bar ===========|
- * @description:    Utilizando la api dada por ROUTER de 
- *                  express, utilazamos las funciones para
- *                  poder crear el CRUD de la colección 
- *                  'Bar' en la base de datos.
- */
-api.get('/bebida', BebidaCtrl.getBebidas);
-
-api.post('/bar', BarCtrl.addBar);//Crea un bar
 
 //api.use(Users.verifyToken); // Es el middleware para poder iniciar sesion
 //api.get('/mysession', Users.startSession); // Iniciar sesion con el web token

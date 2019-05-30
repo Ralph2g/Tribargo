@@ -48,10 +48,8 @@ export class AuthService {
     this.token = token_;
   }// cierra saveToken
 
-  private getToken():string{
-    if( this.token ){
+  public getToken():string{
       this.token = localStorage.getItem('ACCESS_TOKEN');
-    }
     return this.token;
   }
 

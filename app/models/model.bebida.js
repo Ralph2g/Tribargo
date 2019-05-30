@@ -1,8 +1,8 @@
 'use strict'
 
 /**
- * @author       Diaz Medina Jesus Kaimorts
- * @version      1.1
+ * @author:       Diaz Medina Jesus Kaimorts
+ * @version:      1.1
  * @description: En este script se encuentra el modelo Bebida, el cual será
  *               utilizando para poder crear la coleccion Bebida en la base
  *               de datos de MongoDB.

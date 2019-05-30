@@ -15,9 +15,9 @@ export class LoginComponent implements OnInit {
   }
 
   onLogin(form):void{
-    this._authService.login(form.value).subscribe(res => {
-      
-      this._router.navigateByUrl('/home');
+    this._authService.login(form.value).subscribe(
+      response => { 
+      this._router.navigateByUrl('/');
     },
     error =>{
       console.log(error);
