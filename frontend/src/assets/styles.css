@@ -10,7 +10,9 @@
 /*Estilos Generales*/
 
 .body{
-    
+  background: #fff;
+
+
 }
 
 /*----------------------------------------------
@@ -67,7 +69,7 @@
     display: flex;
     background-size: auto;
     background-size: cover;
-    height: 100vh;
+    height: auto;
     flex-direction: column;
 }
 .contenido-hijos{
@@ -82,15 +84,15 @@
 ----------------------------------------------*/
 
 .dashboard{
-    height: 35.5rem;
-    border: var(--main-color) .1rem solid;
-    background-color: var(--light-back);
+    height: auto;
 }
 
 .dashboard #bar-tag{
     margin: .8rem 0 .8rem 0;
     display: block;
-    border: var(--second-color) .1rem solid;
+    border-bottom: var(--second-color) .1rem solid;
+    background: #fff;
+    border-radius: 1rem;
 }
 
 .dashboard .bar-header .bar-name{
@@ -132,7 +134,10 @@
     margin: 1rem .5rem 1rem .5rem;
 }
 
-
+.row{
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
 
 
 /*-----------------fin Dashboard---------------*/
@@ -144,17 +149,16 @@
 .panel{
     display: flex;
     height: 35.5rem;
-    margin: 0 0 1rem 0;
-    border: var(--main-color) .1rem solid;
+    margin-left: 1rem;
     background-color: var(--light-back);
     flex-direction: column;
+    border-radius: 2rem;
 }
 /*___________Componente trend___________*/
 .trend{
     flex: 0 0 50%;
 }
 .trend .container{
-    border: var(--second-color) .1rem solid;
     height: 100%;
     margin: .8rem 0 0 0
 }
@@ -193,4 +197,14 @@
 footer{
     background-color: var(--second-color);
     font-size: 1rem;
+}
+
+
+.back{
+  background: #6a7dfe;
+  background: -webkit-linear-gradient(left, #FDA185, #FFC107);
+  background: -o-linear-gradient(left, #FDA185, #FFC107);
+  background: -moz-linear-gradient(left, #FDA185, #FFC107);
+  background: linear-gradient(left, #FDA185, #FFC107);
+  height: auto;
 }
