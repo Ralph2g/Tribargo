@@ -14,6 +14,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
+
 const BarSchema = new Schema({
     nombre: String,//Nombre del BAR
     ubicacion: String,//BAR
@@ -22,28 +23,39 @@ const BarSchema = new Schema({
     descripcion:String,//BAR
     puntuacion:Number,//bar
     costo:Number,//bar
-    musica: {//BAR
-        type: String,
+    likes:Number,//bar
+    musica: [String],
+    
+    /* {//BAR
+        type: Array,
         enum: ['rock', 'salsa', 'cumbia', 'bachata',
             'reggaeton', 'rap', 'trap', 'banda',
             'nortenho', 'corrido', 'disco', 'electronica',
             'hip hop', 'merengue', 'ranchera', 'rock and roll'
         ]
+    }, */
+    snacks: {
+        type:[String],
+        enum:['alitas','Hamburguesas','Papas','Boneless',
+        'pizza','deditos de queso','Hot-Dogs'
+    ]
+    
     },
-    snacks:{
+    /* {
         type:String,
         enum:['alitas','Hamburguesas','Papas','Boneless',
             'pizza','deditos de queso','Hot-Dogs'
         ]
-    },
+    }, */
     infow:String,
     imagen:String,//bar
-    promocion: {//BAR
+    promocion:[String],
+    /*  {//BAR
         type: String,
         enum: ['chicas_gratis', 'cumpleanhero',
             '2x1', 'sin_cover'
         ]
-    }    
+    }     */
 });
 
 module.exports = mongoose.model('Bar', BarSchema);
