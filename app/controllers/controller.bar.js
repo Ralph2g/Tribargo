@@ -23,7 +23,7 @@ function addBar( req, res ){
     //instanciamos el objeto que recibimos 
         let newBar = new Bar()
         newBar.nombre = req.body.name
-        newBar.ubucacion = req.body.location
+        newBar.ubicacion = req.body.location
         newBar.latitud = req.body.latitude
         newBar.longitud = req.body.longitude
         newBar.descripcion = req.body.description
@@ -31,14 +31,13 @@ function addBar( req, res ){
         newBar.costo = req.body.price
         newBar.musica = req.body.music
         newBar.snacks = req.body.snacks
-        newBar.descripcion = req.body.description
         newBar.infow = req.body.infow
         newBar.imagen = req.body.image
+        newBar.promocion = req.body.promo
         newBar.save( (err, barStored) =>{
-            if (err) 
-                res.status(ReponseHTTP.server_error_codes['ISE']).send({ message: `Error al almacenar el bar: ${err}` });
-                console.log(res.status(ReponseHTTP.accept_codes['OK']));
-            res.status(ReponseHTTP.accept_codes['OK']).send({ newBar: barStored });
+            if (err)
+                return res.status(ReponseHTTP.server_error_codes['ISE']).send({ message: `Error al almacenar el bar: ${err}` });
+            return res.status(ReponseHTTP.accept_codes['OK']).send({ newBar: barStored });
         });
     }
 

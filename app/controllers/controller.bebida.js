@@ -54,7 +54,7 @@ function getBebida(req, res) {
  * @description:    Guarda una bebida en la coleccion
  *                  bebida de la base de datos
  **/
-function saveBebida(req, res) {
+function saveBebida( req, res ) {
     console.log("POST /api/bebida");
     console.log(req.body);
 

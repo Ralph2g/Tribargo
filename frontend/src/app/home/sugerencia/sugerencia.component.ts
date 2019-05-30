@@ -38,6 +38,9 @@ export class SugerenciaComponent implements OnInit {
     console.log(this.id)
     
     });
+
+    
+
     this.name = 'Terraza-Madero';
     this.latitude = 19.433869;
     this.longitude = -99.138893;
