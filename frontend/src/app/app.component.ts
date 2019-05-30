@@ -1,9 +1,5 @@
 import { Component } from '@angular/core';
 
-import { Router } from '@angular/router';
-import { AuthService } from './services/auth.service';
-
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -11,9 +7,9 @@ import { AuthService } from './services/auth.service';
 })
 export class AppComponent {
   title = 'frontend';
-  //Atributo que manejara el token
+  constructor(){
 
-
+  }
 
 
 }

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -6,9 +8,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  public name:string;
+  public token:string;
 
-  ngOnInit() {
+
+  
+  constructor(
+    public _authService:AuthService,
+    public _router:Router
+    ){
+      this.getIdentity();
+    }
+    
+      ngOnInit(){
+    
+    }
+
+  //Revisa si tenemos un token de lo contrario nos manda al login
+  public getIdentity():void{
+    this.token = this._authService.getToken();
+    if(!this.token){
+      this._router.navigate(['/login'])
+    }
   }
 
 }
