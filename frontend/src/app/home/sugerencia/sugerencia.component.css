@@ -5,13 +5,23 @@ agm-map {
 }
 .rating{
     align-self: center;
+
+font-family: 'Happy Monkey', cursive;
+background: #FACF57;
+color: #fff;
+border-radius: 2rem;
 }
 
 .name{
     align-self: center;
+    font-family: 'Bungee Inline', cursive;
 }
 .price{
     align-self: center;
+    font-family: 'Happy Monkey', cursive;
+    background: #FACF57;
+    color: #fff;
+    border-radius: 2rem;
 }
 
 .files{
@@ -30,6 +40,8 @@ agm-map {
 .files .files-image img{
     max-height: 100%;
     width: auto;
+
+    border-radius: 50%;
 }
 
 .files .map {
@@ -47,3 +59,15 @@ agm-map {
     margin: .3rem 0 .2rem 0;
 }
 
+.sub{
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+  background: #6a7dfe;
+  background: -webkit-linear-gradient(left, #FDA185, #FFC107);
+  background: -o-linear-gradient(left, #FDA185, #FFC107);
+  background: -moz-linear-gradient(left, #FDA185, #FFC107);
+  background: linear-gradient(left, #FDA185, #FFC107);
+
+}

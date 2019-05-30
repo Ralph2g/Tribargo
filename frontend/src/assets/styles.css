@@ -1,10 +1,4 @@
 
-@font-face {
-  font-family: Anton;
-  src: url('https://fonts.googleapis.com/css?family=Anton&display=swap');
-}
-
-
 /*Paleta de colores*/
 
 :root{
@@ -21,6 +15,7 @@
 
 
 }
+
 
 /*----------------------------------------------
 +++++++++++++++   Navbar Page   +++++++++++++++
@@ -109,6 +104,7 @@
     margin-right: 2rem;
     flex: 0 0 14rem;
     margin-bottom: 0 !important;
+    font-family: Anton;
 }
 
 .dashboard .bar-header .bar-cost{
@@ -214,4 +210,17 @@ footer{
   background: -moz-linear-gradient(left, #FDA185, #FFC107);
   background: linear-gradient(left, #FDA185, #FFC107);
   height: auto;
+}
+
+.back-w{
+  background: #fff;
+  border-radius: 2rem;
+  padding: 2rem;
+}
+
+.back-info{
+  background: #FACF57;
+  border-radius: 2rem;
+  padding: .8rem;
+  font-size: .8rem;
 }

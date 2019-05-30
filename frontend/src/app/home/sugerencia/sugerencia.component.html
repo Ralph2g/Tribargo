@@ -1,7 +1,7 @@
 <div class="container py-3">
-  <div class="row">
+  <div class="row back-w">
       <div class="rating col-4">
-        Score: {{score}}
+        Score: <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> ({{score}})
       </div>
 
       <div class="name col-5 py-2">
@@ -13,44 +13,45 @@
       </div>
     <div class="files col-4 d-flex flex-col">
       <div class="files-image">
-        <img src="../../../assets/images/beer.png" alt="imagen-bar">
+        <img src="../../../assets/images/ejemplo1.jfif" alt="imagen-bar">
       </div>
-      <h5>Galeria</h5>
+
       <div class="map">
         <agm-map [latitude]="latitude" [longitude]="longitude" [zoom]="20">
-          <agm-marker 
-                  [latitude]="latitude" 
-                  [longitude]="longitude" 
+          <agm-marker
+                  [latitude]="latitude"
+                  [longitude]="longitude"
                   [opacity]="10"
                   [iconUrl]="iconMap.iconUrl"
                   >
                   <agm-info-window [disableAutoPan]="true">
                 <strong>{{name}}</strong><br>
-                {{location}} 
+                {{location}}
               </agm-info-window>
             </agm-marker>
           </agm-map>
         </div>
       </div>
-      
+
+
       <div class="details col-8 container">
         <div class="row">
             <div class="col-12">
-              <h5>Bebidas del bar:</h5>
+              <h5 class="sub">Bebidas del bar:</h5>
             </div>
             <div class="col-12 d-flex">
               <div class="details-img">
-                <img src="../../../assets/images/beer.png" alt="imagen-bar">
+                <img src="../../../assets/images/ejemplo2.jpg" alt="imagen-bar">
               </div>
 
             </div>
-            
+
             <div class="col-12">
               <h5>Snacks del bar:</h5>
             </div>
             <div class="col-12">
               <div class="details-img">
-                <img src="../../../assets/images/beer.png" alt="imagen-bar">
+                <img src="../../../assets/images/ejemplo3.jpg" alt="imagen-bar">
               </div>
             </div>
 
@@ -61,15 +62,13 @@
             <div class="col-6">
               {{description}}
             </div>
-            <div class="col-12 mt-4">
+            <div class="col-12 mt-4 back-info">
               {{location}}
 
             </div>
-              
+
         </div>
-        
+
     </div>
   </div>
 </div>
-
-
