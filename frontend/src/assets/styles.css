@@ -20,6 +20,15 @@
 /*----------------------------------------------
 +++++++++++++++   Navbar Page   +++++++++++++++
 ----------------------------------------------*/
+.nav-link{
+  font-size: 1.4rem;
+  font-family: 'Amatic SC';
+  margin-right: 1.5rem;
+  margin-left: 1.5rem;
+
+}
+
+
 .navbar{
     background: #fafafa;
     border-radius: 0 0 .5rem .5rem ;
@@ -114,6 +123,9 @@
     flex: auto 0 auto;
     text-align: right;
     margin-bottom: 0 !important;
+    background: #FACF57;
+    padding: 1rem;
+    border-radius: 0 0 50% 50%;
 }
 
 .dashboard .bar-header .bar-ranking{
