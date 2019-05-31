@@ -1,7 +1,7 @@
 import { HttpClient} from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { GLOBAL } from 'src/app/services/Global';
 import { AuthService } from 'src/app/services/auth.service';
+import { GLOBAL } from "../../services/Global";
 
 @Component({
   selector: 'app-gustos-usuario',
