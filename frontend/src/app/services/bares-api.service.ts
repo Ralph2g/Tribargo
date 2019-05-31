@@ -12,7 +12,13 @@ export class BaresApiService {
   ) { 
     this.url = GLOBAL.Url;
   }
+
   getData(){
     return this._http.get(this.url + '/bar').toPromise()
   }
+
+  getBar(id){
+    return this._http.get(this.url + '/bar/' + id).toPromise()
+  }
+
 }

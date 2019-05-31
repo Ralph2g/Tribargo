@@ -163,6 +163,7 @@ function deleteBar(req, res) {
     });
 }
 
+
 module.exports = {
     addBar,
     getBars,

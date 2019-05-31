@@ -10,9 +10,11 @@ export class Bar {
     public costo:Number;//bar
     public likes:Number;//bar
     public musica:Array<String>;
+    public bebidas:Array<String>;
     public snacks:Array<String>;
     public infow:String;
     public imagen:String;//bar
     public promocion:Array<String>;
+
     
 }
