@@ -6,12 +6,11 @@
       <a class="trend-top" *ngFor="let top of tops">
         <div class="top-description">
           <p class="top-name">{{top.nombre}}</p>
-          <p class="top-name">{{top.descripcion}}</p>
+          <p class="top-desc">{{top.descripcion}}</p>
         </div>
-        <img class="top-image" *ngIf="top.image" src="../../../assets/images/Logo.png"alt="Logo empresa">
-        <img class="top-image" *ngIf="!top.image" src="../../../assets/images/no-image.jpg"alt="Logo empresa">
+        <img class="top-image" style="margin-top: 1rem;" *ngIf="top.image" src="../../../assets/images/ejemplo1.jfif"alt="Logo empresa">
+        <img class="top-image" style="margin-top: 1rem;" *ngIf="!top.image" src="../../../assets/images/ejemplo1.jfif"alt="Logo empresa">
       </a>
   </div>
 
 </div>
-

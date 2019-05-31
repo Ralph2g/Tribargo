@@ -187,6 +187,10 @@
 .trend .trend-top{
     display: flex;
 }
+ .trend-title{
+    text-transform: uppercase;
+    font-family: 'Bungee Inline', cursive;
+}
 .trend .top-description{
     display: flex;
     flex-direction: column;
@@ -200,8 +204,14 @@
     display: block;
     max-width: 50px;
     max-height: 50px;
+    border-radius: 50px;
 }
-
+.top-name{
+  margin-top: 1REM;
+  text-transform: uppercase;
+  background: #FACF57;
+  border-radius: 50PX;
+}
 /*___________Componente Mapa___________*/
 .mapa{
     flex: 0 0 50%;
