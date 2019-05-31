@@ -115,15 +115,23 @@ export class SugerenciaComponent implements OnInit {
   }
 
 public compruebaPromos(){
-  this.vino = this.bar.bebidas.includes( 'vino' );
-  this.cerveza = this.bar.bebidas.includes( 'cerveza' );
-  this.whisky = this.bar.bebidas.includes( 'whisky' );
-  this.dosporuno = this.bar.promocion.includes( '2x1' );
-  this.chicas = this.bar.promocion.includes( 'chicas_gratis' );
-  this.cumpleanhos = this.bar.promocion.includes( 'cumpleanhero' );
-  this.promociones = this.bar.promocion.includes( 'sin_cover' );
-  this.alitas = this.bar.snacks.includes( 'alitas' );
-  this.hamburguesa = this.bar.snacks.includes( 'Hamburguesas' );
-  this.papas = this.bar.snacks.includes( 'Papas' );
-}
+  if (this.bar.bebidas) {
+    this.whisky = this.bar.bebidas.includes( 'whisky' );
+    
+    this.cerveza = this.bar.bebidas.includes( 'cerveza' );
+    this.vino = this.bar.bebidas.includes( 'vino' );
+  }
+  if(this.bar.promocion){
+    this.dosporuno = this.bar.promocion.includes( '2x1' );
+    this.chicas = this.bar.promocion.includes( 'chicas_gratis' );
+    this.cumpleanhos = this.bar.promocion.includes( 'cumpleanhero' );
+    this.promociones = this.bar.promocion.includes( 'sin_cover' );
+  }
+  if(this.bar.snacks){
+
+    this.alitas = this.bar.snacks.includes( 'alitas' );
+    this.hamburguesa = this.bar.snacks.includes( 'Hamburguesas' );
+    this.papas = this.bar.snacks.includes( 'Papas' );
+  }
+  }
 }
