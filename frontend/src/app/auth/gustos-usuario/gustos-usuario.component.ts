@@ -1,5 +1,7 @@
 import { HttpClient} from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { GLOBAL } from 'src/app/services/Global';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-gustos-usuario',
@@ -19,11 +21,10 @@ export class GustosUsuarioComponent implements OnInit {
   edad: string = '18';
   sexo: string = 'masculino';
   bar: string ='Brazilian Terraza & Grill';
-
-  private myRatesApi
-  = 'https://api-base.herokuapp.com/api/pub/rates';
-
-  constructor(private httpClient: HttpClient) {}
+  public cadenaFinalFinal:any;
+  constructor(private _authService:AuthService) {
+    this.cadenaFinalFinal ="";
+  }
 
   public insertMark(mark){
     let repetir = 0;
@@ -166,10 +167,23 @@ export class GustosUsuarioComponent implements OnInit {
     this.cadenafinal.push('@');
     //Insertar bar
     this.cadenafinal.push(this.bar);
-    //Envio de la cadena
-    this.httpClient //Objeto de conexcion
-    .post(this.myRatesApi, this.cadenafinal) //myRatesApi es la direccion y cadenafinal los datos
-    .subscribe()  //importante metodo para asegurar envio
+    this.cadenaFinalFinal =  this.cadenaString()
+    console.log(this.cadenaFinalFinal);
+    
+    this._authService.sendString(this.cadenaFinalFinal).subscribe(
+      response =>{
+        console.log("Cadena enviada correctamente Respuesta:"+response);
+      },
+      error =>{
+        console.log(error);
+      }
+    )
+  }
+  
+
+  public cadenaString(){
+    return this.cadenafinal.toString();
+    
   }
 
 ngOnInit() {
