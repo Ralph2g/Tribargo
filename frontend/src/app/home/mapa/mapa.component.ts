@@ -47,60 +47,33 @@ export class MapaComponent implements OnInit {
     
     ngOnInit() {
     //Llamamos al servicio de bares para obtenerlos de la base
-      this._baresService.getData().then(
-        (result:any) => {
-          this.bares = result.data;
-        },error => {
-          console.log("Error");
-          console.log(<any>error);
-          
-          
-        }
-        )
-
-
-    
-    this.latitude = 19.433869;
-    this.longitude = -99.138893;
-    this.zoom = 21;
+    this.getBars();
     this.rellenarMarkers();
     console.log(this.markers);
-    
-
-
-    
   }
-
+  //obtenemos los bares a mostrar
+  public getBars(){
+    this._baresService.getData().then(
+      (result:any) => {
+        this.bares = result.bares;
+      },error => {
+        console.log("Error");
+        console.log(<any>error);
+      },
+    )
+  }
+  //rellenamos los markers de los bares en la vista;
   public rellenarMarkers(){
 
-    this.markers =[
-    {
-      id:234,
-      title: 'Mr Duck',
-      lat: 19.434075,
-      lng: -99.138834,
-      opacity: .5,
-      infow: 'Bar juvenil con exelentes precios y alberca',
-      
-    },
-    {
-      id:765,
-      title: 'Rock-Zone',
-      lat: 19.433895,
-      lng:  -99.138806,
-      opacity: .8,
-      infow: 'Bar con música en vivo y exelente ambiente',
-    },
-    {
-      id:199293,
-      title: 'Terraza Madero',
-      lat: 19.4340345,
-      lng: -99.1389304,
-      opacity: .5,
-      infow: 'El mejor lugar para conocer gente nueva y estar con tus amigos',
-    },
-  ]
-    
+    this.bares.forEach( bar =>{
+      this.marker.infow = bar.infow;
+      this.marker.lat = bar.latitud;
+      this.marker.lng = bar.longitud;
+      this.marker.opacity = bar.puntuacion;
+      this.marker.title = bar.nombre;
+      this.markers.push(this.marker);
+      this.marker = null;
+    });
   }
 
 
