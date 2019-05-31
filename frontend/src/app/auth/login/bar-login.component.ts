@@ -16,7 +16,9 @@ export class BarLoginComponent implements OnInit {
 
   onLogin(form):void{
     this.authService.login(form.value).subscribe(res => {
-      this.router.navigateByUrl('/home');
+      console.log("navegar");
+      
+      this.router.navigateByUrl('/gustos-usuario');
     },
     error =>{
       console.log(error);

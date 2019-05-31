@@ -2,6 +2,7 @@ import { HttpClient} from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
 import { GLOBAL } from "../../services/Global";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-gustos-usuario',
@@ -22,7 +23,7 @@ export class GustosUsuarioComponent implements OnInit {
   sexo: string = 'masculino';
   bar: string ='Brazilian Terraza & Grill';
   public cadenaFinalFinal:any;
-  constructor(private _authService:AuthService) {
+  constructor(private _authService:AuthService, private router: Router) {
     this.cadenaFinalFinal ="";
   }
 
@@ -173,6 +174,7 @@ export class GustosUsuarioComponent implements OnInit {
     this._authService.sendString(this.cadenaFinalFinal).subscribe(
       response =>{
         console.log("Cadena enviada correctamente Respuesta:"+response);
+        this.router.navigateByUrl('/gustos-usuario');
       },
       error =>{
         console.log(error);
