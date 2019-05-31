@@ -8,32 +8,34 @@
             {{sugerencia.nombre}}
           </p>
           <p class="bar-ranking">
-            {{sugerencia.puntuacion}}
+              <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>{{sugerencia.puntuacion}}
           </p>
           <p class="bar-cost">
-            {{sugerencia.costo}} $
+            $ {{sugerencia.costo}}
           </p>
         </div>
         <div class="cont-description d-flex">
-          
+
           <div class="cont-image">
-            <img *ngIf="sugerencia.imagen" src="../../../assets/images/no-image.jpg" class="bar-image"alt="Imagen-bar">
-            <img *ngIf="!sugerencia.imagen" src="../../../assets/images/no-image.jpg" class="bar-image"alt="Imagen-bar">
+            <img *ngIf="sugerencia.imagen" src="../../../assets/images/ejemplo1.jfif" class="bar-image"alt="Imagen-bar">
+            <img *ngIf="!sugerencia.imagen" src="../../../assets/images/ejemplo1.jfif" class="bar-image"alt="Imagen-bar">
           </div>
-          <div class="bar-offering">
+          <div class="bar-offering d-flex ">
             <p>
-              {{sugerencia.productos}}
-            </p> 
-            <p>
-              {{sugerencia.musica}}
+              <button type="button" class="btn btn-outline-success ttx">{{sugerencia.productos[0]}}</button>
+              <button type="button" class="btn btn-outline-warning ttx">{{sugerencia.productos[1]}}</button>
+              <button type="button" class="btn btn-outline-dark ttx">{{sugerencia.productos[2]}}</button>
+              <button type="button" class="btn btn-outline-info ttx">{{sugerencia.musica[0]}}</button>
+              <button type="button" class="btn btn-outline-info ttx">{{sugerencia.musica[1]}}</button>
+
             </p>
           </div>
           <div class="separador"></div>
-          <div class="bar-description">
-            <p>
+          <div class="bar-description ">
+            <p >
               {{sugerencia.descripcion}}
             </p>
-            <p>
+            <p class="back-info ubicacion">
               {{sugerencia.ubicacion}}
             </p>
           </div>
