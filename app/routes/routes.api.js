@@ -54,11 +54,12 @@ api.post('/login', Users.loginUser);
  */
 
 api.post('/bar', BarCtrl.addBar); //Crea un bar
-api.get('/bar', BarCtrl.getBars); //recibe todos los bares
-api.get('/bar/:barID', BarCtrl.getBar); //obtioene el bar por la id  
-api.put('/bar/:barID', BarCtrl.updateBar); //actualiza el bar
+api.get('/bar', BarCtrl.getBars); //Recibe todos los bares
+api.get('/bar/:barID', BarCtrl.getBar); //Obtioene el bar por la id  
+api.put('/bar/:barID', BarCtrl.updateBar); //Actualiza el bar
 api.delete('/bar/:barID', BarCtrl.deleteBar); //Borra bar por la id
 
+api.get('/modelo', Modelo.callName);
 //Json Web Token
 
 api.use(function(req, res, next) {
@@ -88,7 +89,6 @@ api.post('/mysession', function(req, res) {
 });
 
 // Function callName() is executed whenever  
-api.get('/modelo', Modelo.callName);
 
 
 //api.use(Users.verifyToken); // Es el middleware para poder iniciar sesion
