@@ -11,7 +11,7 @@
 /*Estilos Generales*/
 
 .body{
-  background: #fff;
+
 
 
 }
@@ -189,7 +189,7 @@
 }
 .mapa .container{
     border: var(--second-color) .1rem solid;
-    height: 100%;
+    height: 30%;
     margin: -.8rem 0 .8rem 0
 }
 
@@ -204,12 +204,10 @@ footer{
 
 
 .back{
-  background: #6a7dfe;
-  background: -webkit-linear-gradient(left, #FDA185, #FFC107);
-  background: -o-linear-gradient(left, #FDA185, #FFC107);
-  background: -moz-linear-gradient(left, #FDA185, #FFC107);
-  background: linear-gradient(left, #FDA185, #FFC107);
+
+  background: #f0f0f0;
   height: auto;
+
 }
 
 .back-w{
@@ -223,4 +221,6 @@ footer{
   border-radius: 2rem;
   padding: .8rem;
   font-size: .8rem;
+  font-family: 'Happy Monkey', cursive;
+  color: white;
 }

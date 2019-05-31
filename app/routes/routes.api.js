@@ -59,9 +59,6 @@ api.get('/bar/:barID', BarCtrl.getBar); //obtioene el bar por la id
 api.put('/bar/:barID', BarCtrl.updateBar); //actualiza el bar
 api.delete('/bar/:barID', BarCtrl.deleteBar); //Borra bar por la id
 
-// Function callName() is executed whenever  
-api.get('/modelo', Modelo.callName);
-
 //Json Web Token
 
 api.use(function(req, res, next) {
@@ -90,6 +87,8 @@ api.post('/mysession', function(req, res) {
     res.send(req.decoded);
 });
 
+// Function callName() is executed whenever  
+api.get('/modelo', Modelo.callName);
 
 
 //api.use(Users.verifyToken); // Es el middleware para poder iniciar sesion

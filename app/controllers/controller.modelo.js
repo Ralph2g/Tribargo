@@ -26,7 +26,11 @@ const spawn = require("child_process").spawn;
 function callName(req, res) {
 
     userPreferences = req.query.userPreferences;
-    // Parametros pasados en spawn - 
+    console.log("Esto es lo que muestra el console log:\n");
+    
+    console.log(userPreferences);
+    
+/*     // Parametros pasados en spawn - 
     // 1. Tipo de script 
     // 2. Lista que contiene la ruta del script 
     //    y los argumentos para el script  
@@ -38,7 +42,7 @@ function callName(req, res) {
     // with arguments and send this data to res object 
     process.stdout.on('data', function(data) {
         res.send(data.toString());
-    })
+    }) */
 }
 
 module.exports = { callName }

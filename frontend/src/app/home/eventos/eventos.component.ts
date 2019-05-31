@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Bar } from 'src/app/models/bar';
+import { BaresApiService } from 'src/app/services/bares-api.service';
 
 @Component({
   selector: 'app-eventos',
@@ -7,15 +9,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EventosComponent implements OnInit {
 
-  public sugerencias:Array<Object>;
+  public sugerencias:Array<Bar>;
 
   
+  ngOnInit() {
+    this.getSugerences();
+    
+  }
 
-  constructor() {
+  public getSugerences(){
+    
+  }
+
+  constructor(
+    private _baresService:BaresApiService
+  ) {
 
     this.sugerencias = [
       {
-        id:123123,
+        _id:123123,
         nombre:'Mr. Duck',
         productos:['tarro','misil','snacks'],
         musica:['Bachata','Rock','regueton'],
@@ -48,8 +60,5 @@ export class EventosComponent implements OnInit {
     ]
   }
 
-  ngOnInit() {
-    console.log("El costo de este lugar en promedio es:"+this.sugerencias[0])
-  }
 
 }
