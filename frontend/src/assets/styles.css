@@ -189,7 +189,7 @@
 }
 .mapa .container{
     border: var(--second-color) .1rem solid;
-    height: 100%;
+    height: 30%;
     margin: -.8rem 0 .8rem 0
 }
 
