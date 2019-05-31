@@ -1,5 +1,6 @@
 export class Bar {
     
+    public _id:Number;
     public nombre: String;//Nombre del BAR
     public ubicacion: String;//BAR
     public latitud:Number;

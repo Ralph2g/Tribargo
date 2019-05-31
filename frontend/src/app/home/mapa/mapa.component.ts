@@ -31,9 +31,9 @@ export class MapaComponent implements OnInit {
   //Atributos del mapa
   public marker:Marker;
   public markers:Array<Object>;
-  public latitude:number;
-  public longitude:number;
-  public zoom:number;
+  public latitude:Number;
+  public longitude:Number;
+  public zoom:Number;
 
     constructor(
       private _baresService:BaresApiService
@@ -51,14 +51,15 @@ export class MapaComponent implements OnInit {
     ngOnInit() {
     //Llamamos al servicio de bares para obtenerlos de la base
     this.getBars();
-    this.rellenarMarkers();
     console.log(this.markers);
+    
     }
     //obtenemos los bares a mostrar
     public getBars(){
       this._baresService.getData().then(
         (result:any) => {
           this.bares = result.bares;
+          this.rellenarMarkers();         
         },error => {
           console.log("Error");
           console.log(<any>error);
@@ -67,15 +68,15 @@ export class MapaComponent implements OnInit {
     }
     //rellenamos los markers de los bares en la vista;
     public rellenarMarkers(){
-    
       this.bares.forEach( bar =>{
+        this.marker.id = bar._id;
         this.marker.infow = bar.infow;
         this.marker.lat = bar.latitud;
         this.marker.lng = bar.longitud;
         this.marker.opacity = bar.puntuacion;
         this.marker.title = bar.nombre;
         this.markers.push(this.marker);
-        this.marker = null;
+        this.marker = new Marker;
       });
     }
 
