@@ -1,5 +1,6 @@
 import { HttpClient} from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { GLOBAL } from "../../services/Global";
 
 @Component({
   selector: 'app-gustos-usuario',
@@ -20,8 +21,7 @@ export class GustosUsuarioComponent implements OnInit {
   sexo: string = 'masculino';
   bar: string ='Brazilian Terraza & Grill';
 
-  private myRatesApi
-  = 'https://api-base.herokuapp.com/api/pub/rates';
+  private myRatesApi = GLOBAL.Url + "/modelo";
 
   constructor(private httpClient: HttpClient) {}
 
