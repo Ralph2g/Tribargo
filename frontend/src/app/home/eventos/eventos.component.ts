@@ -9,7 +9,7 @@ import { BaresApiService } from 'src/app/services/bares-api.service';
 })
 export class EventosComponent implements OnInit {
 
-  public sugerencias:Array<Bar>;
+  public sugerencias:Array<any>;
 
   
   ngOnInit() {

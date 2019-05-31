@@ -26,6 +26,12 @@ var setSnacks = new Set(
     ]
 )
 
+var setDrinks = new Set(
+    ['cerveza','vino','whisky','ron',
+        'cognac','brandi'
+    ]
+)
+
 var setPromos = new Set(
     ['chicas_gratis', 'cumpleanhero',
     '2x1', 'sin_cover'
@@ -58,8 +64,10 @@ function addBar( req, res ){
             let musica = [];
             musica = req.body.music.split(",")
             musica.forEach(genero => {
-                if (!setMusic.has(genero))
+                if (!setMusic.has(genero)){
+                    console.log("Error en musica");
                     return asingError = 1;
+                }
             });
             return musica
         }(req.body.music));
@@ -70,11 +78,34 @@ function addBar( req, res ){
             let snacks = [];
             snacks = req.body.snacks.split(",")
             snacks.forEach(snack => {
-                if (!setSnacks.has(snack))
+                if (!setSnacks.has(snack)){
+                    console.log("Error en snacks");
                     return asingError = 1;
+                }
             });
             return snacks
         }(req.body.snacks));
+        console.log("Antes de entrar \n" +asingError);
+        console.log(asingError);
+        
+        newBar.bebidas = (function () {
+
+            if (!req.body.drinks)
+                return null;
+            let drinks = [];
+            drinks = req.body.drinks.split(",")
+            drinks.forEach(drink => {
+                console.log("Bebida"+drink);
+                console.log(asingError);
+                
+                if (!setDrinks.has(drink)){
+                    console.log("Error en drinks");
+                    return asingError = 1;
+                }
+            });
+            return drinks
+        }(req.body.drinks));
+
         newBar.infow = req.body.infow
         newBar.imagen = req.body.image
         newBar.likes = req.body.likes
@@ -86,8 +117,10 @@ function addBar( req, res ){
             }
             promos = req.body.promos.split(",")
             promos.forEach(promo => {
-                if (!setPromos.has(promo))
+                if (!setPromos.has(promo)){
+                    console.log("Error en promo");
                     return asingError = 1;
+                }
             });
             return promos
         }(req.body.promo));

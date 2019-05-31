@@ -3,6 +3,9 @@ agm-map {
     height: 100%;
     width: 100%;
 }
+.row{
+    margin-top: 0;
+}
 .rating{
     align-self: center;
 

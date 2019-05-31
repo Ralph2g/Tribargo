@@ -36,6 +36,7 @@
     border-top: inherit;
     border-left: inherit;
     border-right: inherit;
+    padding: .5rem 12rem;
 }
 .navbar .nav-image{
     display: block;

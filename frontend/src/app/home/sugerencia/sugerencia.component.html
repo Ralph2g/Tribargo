@@ -1,15 +1,15 @@
-<div class="container py-3">
+<div class="container">
   <div class="row back-w">
       <div class="rating col-4">
-        Score: <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> ({{score}})
+        Score: <i *ngFor="let star of stars" class="fa fa-star"></i> ({{bar.puntuacion}})
       </div>
 
       <div class="name col-5 py-2">
-        <h3><u>{{name}}</u></h3>
+        <h3><u>{{bar.nombre}}</u></h3>
       </div>
 
       <div class="price col-3">
-        Precio: {{price}}
+        Precio: {{bar.costo}}
       </div>
     <div class="files col-4 d-flex flex-col">
       <div class="files-image">
@@ -17,16 +17,16 @@
       </div>
 
       <div class="map">
-        <agm-map [latitude]="latitude" [longitude]="longitude" [zoom]="20">
+        <agm-map [latitude]="bar.latitud" [longitude]="bar.longitud" [zoom]="16">
           <agm-marker
-                  [latitude]="latitude"
-                  [longitude]="longitude"
+                  [latitude]="bar.latitud"
+                  [longitude]="bar.longitud"
                   [opacity]="10"
                   [iconUrl]="iconMap.iconUrl"
                   >
                   <agm-info-window [disableAutoPan]="true">
-                <strong>{{name}}</strong><br>
-                {{location}}
+                <strong>{{bar.nombre}}</strong><br>
+                {{bar.ubicacion}}
               </agm-info-window>
             </agm-marker>
           </agm-map>
@@ -42,7 +42,7 @@
             <blockquote class="inner-block">
                 <span class="fa fa-3x fa-quote-right"></span>
                 <p class="block-text">
-                    {{description}}
+                    {{bar.descripcion}}
                 </p>
             </blockquote>
         </div>
@@ -52,13 +52,13 @@
               <h5 class="sub">Bebidas del bar:</h5>
             </div>
             <div class="col-12 d-flex">
-              <div class="details-img">
+              <div *ngIf="vino" class="details-img">
                 <img src="../../../assets/images/ejemplo2.jpg" alt="imagen-bar">
               </div>
-              <div class="details-img">
+              <div *ngIf="cerveza" class="details-img">
                 <img src="../../../assets/images/ejemplo3.jpg" alt="imagen-bar">
               </div>
-              <div class="details-img">
+              <div *ngIf="whisky" class="details-img">
                 <img src="../../../assets/images/ejemplo4.jpg" alt="imagen-bar">
               </div>
 
@@ -68,27 +68,27 @@
               <h5 class="sub">Snacks del bar:</h5>
             </div>
             <div class="col-12 d-flex">
-              <div class="details-img">
+              <div *ngIf="alitas" class="details-img">
                 <img src="../../../assets/images/ejemplo6.jpg" alt="imagen-bar">
               </div>
-              <div class="details-img">
+              <div *ngIf="hamburguesa" class="details-img">
                 <img src="../../../assets/images/ejemplo7.jpg" alt="imagen-bar">
               </div>
-              <div class="details-img">
+              <div *ngIf="papas" class="details-img">
                 <img src="../../../assets/images/ejemplo8.jpg" alt="imagen-bar">
               </div>
             </div>
 
             <div class="tag d-flex ">
               <h3><span class="fa fa-tag" style="color:#555; font-size: 1rem;"></span></h3>
-              <button type="button" class="btn btn-outline-success">#ConTerraza</button>
-<button type="button" class="btn btn-outline-danger">#+18</button>
-<button type="button" class="btn btn-outline-warning">#Cumplea&ntilde;os</button>
-<button type="button" class="btn btn-outline-info">#Promociones</button>
+              <button *ngIf="dosporuno" type="button" class="btn btn-outline-success">#2x1</button>
+<button type="button" *ngIf="chicas" class="btn btn-outline-danger">#chicas-Gratis</button>
+<button type="button"  *ngIf="cumpleanhos" class="btn btn-outline-warning">#Cumplea&ntilde;os</button>
+<button type="button" *ngIf="promociones" class="btn btn-outline-info">#Promociones</button>
             </div>
 
             <div class="col-12 mt-4 back-info">
-              {{location}}
+              {{bar.ubicacion}}
 
             </div>
 

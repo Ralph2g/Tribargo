@@ -41,6 +41,7 @@ const BarSchema = new Schema({
     ] */
     
     },
+    bebidas:[String],
     /* {
         type:String,
         enum:['alitas','Hamburguesas','Papas','Boneless',
