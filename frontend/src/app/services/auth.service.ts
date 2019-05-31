@@ -54,7 +54,7 @@ export class AuthService {
   }
   //envio de la cadena 
   public sendString (cadena){
-    return this.httpClient.post(this.AUTH_SERVER+'modelo',cadena);    
+    return this.httpClient.get(this.AUTH_SERVER+'/modelo',cadena);    
 }
 
   
