@@ -1,3 +1,3 @@
 export const GLOBAL ={
-    Url: 'http://localhost/curso-angular-backend/index.php/'
+    Url: 'http://localhost:3001/api'
 }

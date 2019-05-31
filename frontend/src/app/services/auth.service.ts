@@ -52,15 +52,10 @@ export class AuthService {
       this.token = localStorage.getItem('ACCESS_TOKEN');
     return this.token;
   }
-
-/*   private getIdentity():Observable<any>{
-    let headers = new HttpHeaders().set("Content-Type","application/json")
-                    .set("Authorization", this.getToken())
-
-    let identity = JSON.parse(localStorage.getItem(''))
-  } */
-
-  
+  //envio de la cadena 
+  public sendString (cadena){
+    return this.httpClient.get(this.AUTH_SERVER+'/modelo',cadena);    
+}
 
   
 

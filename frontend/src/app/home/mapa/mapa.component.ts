@@ -21,20 +21,19 @@ export class MapaComponent implements OnInit {
       fontWeight: 'bold',
       letterSpacing:'0.5px',
       text: 'Plan Pagado/No pagado'
-    }
+  }
   
-    public iconMap = {
+  public iconMap = {
       iconUrl:'http://localhost:4200/assets/images/icons/beer-icon.png',
-    }
+  }
   //declaramos el objeto bar que es el que nos reguesa la base de datos
-    public bares:Array<Bar>
-  
+  public bares:Array<Bar>
   //Atributos del mapa
   public marker:Marker;
   public markers:Array<Object>;
-  public latitude:number;
-  public longitude:number;
-  public zoom:number;
+  public latitude:Number;
+  public longitude:Number;
+  public zoom:Number;
 
     constructor(
       private _baresService:BaresApiService
@@ -43,65 +42,43 @@ export class MapaComponent implements OnInit {
       this.marker = new Marker;
       this.markers =[];
       this.bares = [];
+      //se configura el mapa
+      this.latitude = 19.433869;
+      this.longitude = -99.138893;
+      this.zoom = 20;
     }
     
     ngOnInit() {
     //Llamamos al servicio de bares para obtenerlos de la base
+    this.getBars();
+    console.log(this.markers);
+    
+    }
+    //obtenemos los bares a mostrar
+    public getBars(){
       this._baresService.getData().then(
         (result:any) => {
-          this.bares = result.data;
+          this.bares = result.bares;
+          this.rellenarMarkers();         
         },error => {
           console.log("Error");
           console.log(<any>error);
-          
-          
-        }
-        )
-
-
-    
-    this.latitude = 19.433869;
-    this.longitude = -99.138893;
-    this.zoom = 21;
-    this.rellenarMarkers();
-    console.log(this.markers);
-    
-
-
-    
-  }
-
-  public rellenarMarkers(){
-
-    this.markers =[
-    {
-      id:234,
-      title: 'Mr Duck',
-      lat: 19.434075,
-      lng: -99.138834,
-      opacity: .5,
-      infow: 'Bar juvenil con exelentes precios y alberca',
-      
-    },
-    {
-      id:765,
-      title: 'Rock-Zone',
-      lat: 19.433895,
-      lng:  -99.138806,
-      opacity: .8,
-      infow: 'Bar con música en vivo y exelente ambiente',
-    },
-    {
-      id:199293,
-      title: 'Terraza Madero',
-      lat: 19.4340345,
-      lng: -99.1389304,
-      opacity: .5,
-      infow: 'El mejor lugar para conocer gente nueva y estar con tus amigos',
-    },
-  ]
-    
-  }
+        },
+      )
+    }
+    //rellenamos los markers de los bares en la vista;
+    public rellenarMarkers(){
+      this.bares.forEach( bar =>{
+        this.marker.id = bar._id;
+        this.marker.infow = bar.infow;
+        this.marker.lat = bar.latitud;
+        this.marker.lng = bar.longitud;
+        this.marker.opacity = bar.puntuacion;
+        this.marker.title = bar.nombre;
+        this.markers.push(this.marker);
+        this.marker = new Marker;
+      });
+    }
 
 
 }

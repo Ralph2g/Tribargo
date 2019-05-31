@@ -21,7 +21,8 @@ const ResponseHTTP = require('../config/config.http_codes');
  */
 const BebidaCtrl = require('../controllers/controller.bebida');
 const Users = require('../controllers/controller.user');
-const BarCtrl =require('../controllers/controller.bar');
+const BarCtrl = require('../controllers/controller.bar');
+const Modelo = require('../controllers/controller.modelo');
 
 /** |=========== CRUD en la coleccion BEBIDA ===========|
  * @description:    Utilizando la api dada por ROUTER de 
@@ -52,11 +53,11 @@ api.post('/login', Users.loginUser);
  *                  'Bar' en la base de datos.
  */
 
-api.post('/bar', BarCtrl.addBar);//Crea un bar
-api.get('/bar', BarCtrl.getBars);//recibe todos los bares
-api.get('/bar/:barID', BarCtrl.getBar);//obtioene el bar por la id  
+api.post('/bar', BarCtrl.addBar); //Crea un bar
+api.get('/bar', BarCtrl.getBars); //recibe todos los bares
+api.get('/bar/:barID', BarCtrl.getBar); //obtioene el bar por la id  
 api.put('/bar/:barID', BarCtrl.updateBar); //actualiza el bar
-api.delete('/bar/:barID', BarCtrl.deleteBar);//Borra bar por la id
+api.delete('/bar/:barID', BarCtrl.deleteBar); //Borra bar por la id
 
 //Json Web Token
 
@@ -85,6 +86,9 @@ api.use(function(req, res, next) {
 api.post('/mysession', function(req, res) {
     res.send(req.decoded);
 });
+
+// Function callName() is executed whenever  
+api.get('/modelo', Modelo.callName);
 
 
 //api.use(Users.verifyToken); // Es el middleware para poder iniciar sesion

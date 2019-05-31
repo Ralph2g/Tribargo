@@ -1,9 +1,9 @@
 export class Marker {
-
-        public title: string;
-        public lat: number;
-        public lng: number;
-        public opacity: number;
-        public infow: boolean;
+        public id:Number;
+        public title: String;
+        public lat: Number;
+        public lng: Number;
+        public opacity: Number;
+        public infow: String;
 
 }
