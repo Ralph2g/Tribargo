@@ -88,7 +88,6 @@ border-radius: 2rem;
         overflow: hidden;
         border-radius: 17px;
         background-color: #FACF57;
-        margin-top: 25px;
         color:  #fff;;
         width: 100%;
           padding: 1rem;
@@ -97,7 +96,15 @@ border-radius: 2rem;
     .block-text {
       font-family: 'Happy Monkey', cursive;
         font-size: 19px;
-        margin-top: 13px;
         color: #fff;
           padding: 1rem;
     }
+    .tag{
+
+    }
+.btn{
+  font-size: .5rem;
+  margin-left: .5rem;
+  padding: 5px;
+  
+}
