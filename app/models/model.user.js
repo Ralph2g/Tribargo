@@ -19,7 +19,7 @@ mongoose.set('useCreateIndex', true); // Esto lo deemos especificar si no da un 
 const UserSchema = new Schema({
     nombre: { type: String, required: true, trim: true },
     apellido: { type: String, required: true, trim: true },
-    sexo: { type: String, enum: ['femenino', 'masculino'], trim: true, required: true },
+    sexo: { type: String, enum: ['femenino', 'masculino'], default:'femenino', trim: true, required: false },
     fecha_nacimiento: { type: Date, trim: true, required: true },
     edad: { type: Number, required: true, default: 18 },
     presupuesto: { type: Number, required: true, default: 200 },

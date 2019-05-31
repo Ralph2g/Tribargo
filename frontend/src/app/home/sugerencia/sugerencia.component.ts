@@ -14,18 +14,25 @@ export class SugerenciaComponent implements OnInit {
   }
   public bar:Bar;
   public id:number;//id del bar para sacarlo de la base datos
-  public name:string;
-  public score:number;//puntuacion
-  public price:number;//precio
-  public image:File;//imagen
-  public drinks:Array<string>;//array de bebidas
-  public snacks:Array<string>;//array de SNACKS
-  public music:Array<string>;//array de MUSICA
-  public description:string;//descripcion larga del bar
-  public promos:Array<string>;//array de PROMOS
-  public location:string;//localización en string
-  public latitude:number;//latitud en el mapa
-  public longitude:number;//longitud en el mapa
+
+  public opacity:any
+
+  //
+  public stars:Array<number>
+  //bebidas
+  public cerveza:boolean;
+  public vino:boolean;
+  public whisky:boolean;
+  //snacks
+  public alitas:boolean;
+  public hamburguesa:boolean;
+  public papas:boolean;
+  //promos
+  public dosporuno:boolean;
+  public cumpleanhos:boolean;
+  public chicas:boolean;
+  public promociones:boolean;
+
 
   constructor(
     public _route:ActivatedRoute,
@@ -34,6 +41,23 @@ export class SugerenciaComponent implements OnInit {
 
   ) { 
     this.bar = new Bar;
+    this.stars =[];
+     //bebidas
+    this.cerveza = null;
+    this.vino = null;
+    this.whisky = null;
+  //snacks
+    this.alitas = null;
+    this.hamburguesa = null;
+    this.papas = null;
+    this.whisky = null;
+  //snacks
+  //promos
+    this.dosporuno = null;
+    this.cumpleanhos = null;
+    this.chicas = null;
+    this.promociones = null;
+
   }
 
   ngOnInit() {
@@ -41,26 +65,12 @@ export class SugerenciaComponent implements OnInit {
     this._route.params.forEach((params: Params) =>{
     let id = params['id'];  
     this.id = id;
-
     this.getBar(this.id);
-    console.log(this.bar);
-    
     });
 
-        
+    this.opacity = this.bar.puntuacion;
+    this.opacity*2
 
-    this.name = 'Terraza-Madero';
-    this.latitude = 19.433869;
-    this.longitude = -99.138893;
-    this.score = 4;
-    this.price = 150;
-    this.image = null;
-    this.drinks = ['Heineken','XX','victoria'];
-    this.snacks = ['Alitas','Hamburguesas', 'Papas'];
-    this.music = ['Regueton', 'Banda','Salsa', 'ska'];
-    this.description = 'Somos el bar más popular para pasar la tarde con tus amigos, hay de todo y a buen precio';
-    this.promos = ['2x1','No-cover'];
-    this.location = 'Av Francisco I. Madero 20, Centro Histórico de la Cdad. de México, Centro, 06010 Ciudad de México, CDMX';
 
   }
 
@@ -68,9 +78,11 @@ export class SugerenciaComponent implements OnInit {
   public getBar(id){
     this._baresService.getBar(id).then(
       (result:any) =>{
-        console.log("imprimo los bares");
         console.log(JSON.stringify(result))
         this.rellenarBar(result.bar);
+        this.stars = []
+        this.llenarStars()
+        this.compruebaPromos()
       },error => {
         console.log("Error");
         console.log(<any>error);
@@ -78,12 +90,7 @@ export class SugerenciaComponent implements OnInit {
     )
   }
 
-  
 
-
-
-
-musica
   public rellenarBar(bar){
     this.bar._id = bar._id;
     this.bar.nombre = bar.nombre;
@@ -98,6 +105,33 @@ musica
     this.bar.descripcion = bar.descripcion;
     this.bar.promocion = bar.promocion;
     this.bar.ubicacion = bar.ubicacion;
+    
   }
 
+  llenarStars(){
+    for (let i= 0; i< this.bar.puntuacion; i++)
+    this.stars.push(1);
+    
+  }
+
+public compruebaPromos(){
+  if (this.bar.bebidas) {
+    this.whisky = this.bar.bebidas.includes( 'whisky' );
+    
+    this.cerveza = this.bar.bebidas.includes( 'cerveza' );
+    this.vino = this.bar.bebidas.includes( 'vino' );
+  }
+  if(this.bar.promocion){
+    this.dosporuno = this.bar.promocion.includes( '2x1' );
+    this.chicas = this.bar.promocion.includes( 'chicas_gratis' );
+    this.cumpleanhos = this.bar.promocion.includes( 'cumpleanhero' );
+    this.promociones = this.bar.promocion.includes( 'sin_cover' );
+  }
+  if(this.bar.snacks){
+
+    this.alitas = this.bar.snacks.includes( 'alitas' );
+    this.hamburguesa = this.bar.snacks.includes( 'Hamburguesas' );
+    this.papas = this.bar.snacks.includes( 'Papas' );
+  }
+  }
 }

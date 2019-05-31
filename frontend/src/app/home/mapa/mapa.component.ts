@@ -45,7 +45,7 @@ export class MapaComponent implements OnInit {
       //se configura el mapa
       this.latitude = 19.433869;
       this.longitude = -99.138893;
-      this.zoom = 20;
+      this.zoom = 16;
     }
     
     ngOnInit() {
