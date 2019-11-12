@@ -1,0 +1,1 @@
+{"options":{},"indexes":[{"v":2,"key":{"_id":1},"name":"_id_","ns":"tribargo.users"},{"v":2,"unique":true,"key":{"correo":1},"name":"correo_1","ns":"tribargo.users","background":true}],"uuid":"dc4da3f5e6474c399e82f67d026d9fc9"}
